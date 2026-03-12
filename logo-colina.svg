@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" fill="none"/>
+  <!-- Simple house/mountain icon -->
+  <polygon points="30,50 50,25 70,50" fill="#2d6a4f" stroke="#2d6a4f" stroke-width="1"/>
+  <polygon points="42,50 58,32 74,50" fill="#40916c" stroke="none"/>
+  <rect x="42" y="50" width="16" height="10" fill="#2d6a4f"/>
+  <!-- Text -->
+  <text x="100" y="35" font-family="'Arial', sans-serif" font-size="13" font-weight="700" fill="#2d6a4f" text-anchor="middle" letter-spacing="1">MUNICIPALIDAD</text>
+  <text x="100" y="52" font-family="'Arial', sans-serif" font-size="18" font-weight="700" fill="#1b4332" text-anchor="middle" letter-spacing="2">COLINA</text>
+  <line x1="75" y1="58" x2="125" y2="58" stroke="#40916c" stroke-width="1.5"/>
+  <text x="100" y="68" font-family="'Arial', sans-serif" font-size="7" fill="#666" text-anchor="middle" letter-spacing="2">REGIÓN METROPOLITANA</text>
+</svg>
