@@ -59,9 +59,11 @@
     header { position: fixed; top: 0; left: 0; width: 100%; z-index: 200; transition: all 0.4s var(--ease); }
     header.scrolled { background: rgba(252,252,250,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
     nav { display: flex; justify-content: space-between; align-items: center; height: 86px; }
-    .logo { font-family: var(--serif); font-size: 2rem; font-weight: 500; letter-spacing: 0.06em; color: #fff; transition: color 0.3s; }
+    .logo { display: flex; align-items: center; color: #fff; transition: color 0.3s; text-decoration: none; }
     header.scrolled .logo { color: var(--dark); }
-    .logo span { color: var(--gold); }
+    .logo svg { height: 42px; width: auto; }
+    .logo .logo-text { fill: currentColor; transition: fill 0.3s; }
+    .logo .logo-o-inner { fill: currentColor; transition: fill 0.3s; }
     .nav-links { display: flex; gap: 2.4rem; list-style: none; align-items: center; }
     .nav-links a { font-size: 0.76rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.85); position: relative; transition: color 0.25s; }
     header.scrolled .nav-links a { color: var(--text); }
@@ -183,8 +185,10 @@
     /* ─── FOOTER ─── */
     footer { background: #fff; border-top: 1px solid var(--border); padding: 72px 0 36px; }
     .footer-grid { display: grid; grid-template-columns: 2.2fr 1fr 1fr; gap: 56px; margin-bottom: 56px; }
-    .footer-logo { font-family: var(--serif); font-size: 2rem; font-weight: 500; color: var(--dark); letter-spacing: 0.05em; margin-bottom: 16px; display: block; }
-    .footer-logo span { color: var(--gold); }
+    .footer-logo { display: inline-flex; align-items: center; margin-bottom: 16px; color: var(--dark); text-decoration: none; }
+    .footer-logo svg { height: 48px; width: auto; }
+    .footer-logo .logo-text { fill: currentColor; }
+    .footer-logo .logo-o-inner { fill: currentColor; }
     .footer-desc { font-size: 0.87rem; color: var(--muted); font-weight: 300; line-height: 1.8; max-width: 320px; }
     .footer-col h5 { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; margin-bottom: 20px; color: var(--dark); }
     .footer-col a, .footer-col p { font-size: 0.87rem; color: var(--muted); font-weight: 300; display: block; margin-bottom: 10px; transition: color 0.2s; }
@@ -251,7 +255,24 @@
 <header id="header">
   <div class="container">
     <nav>
-      <a href="#inicio" class="logo">Bistró<span>.</span></a>
+      <a href="#inicio" class="logo"><svg viewBox="0 0 160 42" xmlns="http://www.w3.org/2000/svg" aria-label="Bistró Express">
+          <defs>
+            <mask id="ring-mask">
+              <circle cx="113" cy="22" r="14" fill="white"/>
+              <circle cx="113" cy="22" r="8.5" fill="black"/>
+            </mask>
+          </defs>
+          <!-- bistro text: "bistr" -->
+          <text x="2" y="36" font-family="'Montserrat','Arial Black',Arial,sans-serif" font-weight="800" font-size="36" class="logo-text">bistr</text>
+          <!-- o: yellow ring with transparent center via mask -->
+          <circle cx="113" cy="22" r="14" fill="#F0BE1F" mask="url(#ring-mask)"/>
+          <!-- Cloche base line -->
+          <rect x="101" y="8" width="24" height="2.8" rx="1.4" fill="#F0BE1F"/>
+          <!-- Cloche dome -->
+          <path d="M101,8 Q113,-2 125,8 Z" fill="#F0BE1F"/>
+          <!-- Knob -->
+          <circle cx="113" cy="2" r="2.4" fill="#F0BE1F"/>
+        </svg></a>
       <ul class="nav-links">
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#portafolio">Portafolio</a></li>
@@ -429,21 +450,21 @@
         <span class="scard-num">01</span>
         <h4>Coffee Breaks</h4>
         <p>Ideal para reuniones matutinas, capacitaciones y jornadas extendidas. Opciones dulces, saladas y saludables con cafetería premium.</p>
-        <div class="scard-price">Solicitar Propuesta para tu Coffee Break</div>
+        <div class="scard-price">Desde $15.000 / pp</div>
         <span class="scard-arrow">→</span>
       </div>
       <div class="scard reveal d1">
         <span class="scard-num">02</span>
         <h4>Almuerzos Ejecutivos</h4>
         <p>Menús completos de 3 tiempos para directorios o formato buffet para team buildings. Presentación elegante y servicio incluido.</p>
-        <div class="scard-price">Solicitar Propuesta para tu Equipo</div>
+        <div class="scard-price">Cotización personalizada</div>
         <span class="scard-arrow">→</span>
       </div>
       <div class="scard reveal d2">
         <span class="scard-num">03</span>
         <h4>Coctelería & Lanzamientos</h4>
         <p>Celebraciones corporativas de fin de año, aniversarios o lanzamientos de producto. Bocados de autor y mixología profesional.</p>
-        <div class="scard-price">Pedir Presupuesto a Medida</div>
+        <div class="scard-price">Cotización personalizada</div>
         <span class="scard-arrow">→</span>
       </div>
     </div>
@@ -496,7 +517,19 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <span class="footer-logo">Bistró<span>.</span></span>
+        <a href="#inicio" class="footer-logo"><svg viewBox="0 0 160 42" xmlns="http://www.w3.org/2000/svg" aria-label="Bistró Express">
+          <defs>
+            <mask id="ring-mask-footer">
+              <circle cx="113" cy="22" r="14" fill="white"/>
+              <circle cx="113" cy="22" r="8.5" fill="black"/>
+            </mask>
+          </defs>
+          <text x="2" y="36" font-family="'Montserrat','Arial Black',Arial,sans-serif" font-weight="800" font-size="36" class="logo-text">bistr</text>
+          <circle cx="113" cy="22" r="14" fill="#F0BE1F" mask="url(#ring-mask-footer)"/>
+          <rect x="101" y="8" width="24" height="2.8" rx="1.4" fill="#F0BE1F"/>
+          <path d="M101,8 Q113,-2 125,8 Z" fill="#F0BE1F"/>
+          <circle cx="113" cy="2" r="2.4" fill="#F0BE1F"/>
+        </svg></a>
         <p class="footer-desc">Catering profesional para eventos corporativos y celebraciones en Santiago. Calidad gastronómica y atención personalizada a precios justos.</p>
         <div class="footer-social" style="margin-top:24px;">
           <a href="https://www.instagram.com/bistro.caterings/" target="_blank">Instagram</a>
