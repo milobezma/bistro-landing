@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" width="240" height="72">
+  <rect width="240" height="72" fill="none"/>
+  <!-- Circle mark -->
+  <circle cx="22" cy="36" r="16" fill="#0066B3"/>
+  <circle cx="22" cy="36" r="10" fill="white"/>
+  <circle cx="22" cy="36" r="5" fill="#0066B3"/>
+  <!-- Endress+Hauser text -->
+  <text x="46" y="33" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#0066B3" letter-spacing="0.3">Endress+Hauser</text>
+  <!-- Tagline -->
+  <text x="46" y="52" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#888" letter-spacing="1.5">PROCESS AUTOMATION</text>
+</svg>
