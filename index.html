@@ -72,7 +72,7 @@ img{display:block;max-width:100%}
 }
 .hero-bg{
   position:absolute;inset:0;
-  background:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=90') center/cover no-repeat;
+  background:url('foto-hero.png') center/cover no-repeat;
   transform:scale(1.06);animation:bgzoom 14s ease forwards;
 }
 @keyframes bgzoom{to{transform:scale(1)}}
@@ -210,6 +210,28 @@ img{display:block;max-width:100%}
 }
 .gal-item:hover .gal-ov{opacity:1}
 .gal-ov svg{width:26px;height:26px;color:#0c0c0c}
+
+/* ══════════ VIDEOS ══════════ */
+#videos{background:var(--dark)}
+.vid-hdr{text-align:center;margin-bottom:44px}
+.vid-hdr p{color:rgba(255,255,255,.42);font-size:14px;max-width:480px;margin:10px auto 0;line-height:1.7}
+.vid-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vid-item{position:relative;border-radius:4px;overflow:hidden;background:#000}
+.vid-item video{
+  width:100%;display:block;
+  aspect-ratio:9/16;object-fit:cover;
+  border-radius:4px;
+}
+.vid-label{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:18px 20px;
+  background:linear-gradient(to top,rgba(0,0,0,.8) 0%,transparent 100%);
+  font-size:12px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.8);font-weight:500;
+}
+@media(max-width:768px){
+  .vid-grid{grid-template-columns:1fr}
+}
 
 /* ══════════ CLIENTS ══════════ */
 #clients{background:var(--dark);text-align:center}
@@ -360,23 +382,14 @@ footer{background:#070707;padding:60px 64px;border-top:1px solid rgba(255,255,25
 <!-- ══════════ NAVBAR ══════════ -->
 <nav id="nav">
   <a href="#" class="logo">
-    <!-- Logo Bistró: círculo amarillo con tenedor oscuro, igual al de Instagram -->
-    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="21" cy="21" r="21" fill="#F5C200"/>
-      <!-- Tenedor con tres dientes -->
-      <line x1="15" y1="8.5" x2="15" y2="17" stroke="#1a0e00" stroke-width="2.4" stroke-linecap="round"/>
-      <line x1="21" y1="8.5" x2="21" y2="17" stroke="#1a0e00" stroke-width="2.4" stroke-linecap="round"/>
-      <line x1="27" y1="8.5" x2="27" y2="17" stroke="#1a0e00" stroke-width="2.4" stroke-linecap="round"/>
-      <!-- Curvatura y mango -->
-      <path d="M15 17 Q15 22 18.5 23 L18.5 33.5 L23.5 33.5 L23.5 23 Q27 22 27 17"
-            fill="none" stroke="#1a0e00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <img src="logo-bistro.png" alt="Bistró Logo" width="42" height="42" style="border-radius:9px;object-fit:contain">
     <span class="logo-name">BISTRÓ</span>
   </a>
   <ul class="nav-links">
     <li><a href="#about">Nosotros</a></li>
     <li><a href="#services">Servicios</a></li>
     <li><a href="#gallery">Galería</a></li>
+    <li><a href="#videos">Videos</a></li>
     <li><a href="#clients">Clientes</a></li>
     <li><a href="#reviews">Reseñas</a></li>
     <li><a href="#contact">Contacto</a></li>
@@ -415,8 +428,7 @@ footer{background:#070707;padding:60px 64px;border-top:1px solid rgba(255,255,25
     <!--
       Unsplash: photo-1565299585323-38d6b0865b47 — mesa de catering corporativo
     -->
-    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=900&q=82"
-         alt="Mesa de catering Bistró">
+    <img src="foto-nosotros.png" alt="Equipo Bistró Catering">
     <div class="abt-badge"><strong>5+</strong><span>Años de experiencia</span></div>
   </div>
   <div class="abt-txt fi d1">
@@ -426,9 +438,9 @@ footer{background:#070707;padding:60px 64px;border-top:1px solid rgba(255,255,25
     <p>En Bistró creemos que cada evento es una oportunidad para crear recuerdos inolvidables. Somos un equipo de profesionales gastronómicos apasionados por la calidad, la creatividad y el servicio excepcional en Santiago de Chile.</p>
     <p>Nos especializamos en catering corporativo y eventos, trabajando con empresas líderes que confían en nosotros para sus momentos más importantes. Desde desayunos ejecutivos hasta grandes celebraciones, cada detalle importa.</p>
     <div class="stats">
-      <div class="stat"><div class="stat-n" data-to="200">0+</div><div class="stat-l">Clientes</div></div>
-      <div class="stat"><div class="stat-n" data-to="500">0+</div><div class="stat-l">Eventos al año</div></div>
-      <div class="stat"><div class="stat-n" data-to="50">0+</div><div class="stat-l">Menús</div></div>
+      <div class="stat"><div class="stat-n" data-to="45">0+</div><div class="stat-l">Empresas clientes</div></div>
+      <div class="stat"><div class="stat-n" data-to="160">0+</div><div class="stat-l">Eventos realizados</div></div>
+      <div class="stat"><div class="stat-n" data-to="12">0+</div><div class="stat-l">Menús exclusivos</div></div>
     </div>
   </div>
 </section>
@@ -442,8 +454,7 @@ footer{background:#070707;padding:60px 64px;border-top:1px solid rgba(255,255,25
   <div class="svc-grid">
     <!-- Service 1: Catering corporativo -->
     <div class="svc-card fi">
-      <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=82"
-           alt="Catering Corporativo">
+      <img src="foto-servicio1.png" alt="Catering Corporativo">
       <div class="svc-mask"></div>
       <div class="svc-body">
         <div class="svc-n">01</div>
@@ -453,8 +464,7 @@ footer{background:#070707;padding:60px 64px;border-top:1px solid rgba(255,255,25
     </div>
     <!-- Service 2: Eventos -->
     <div class="svc-card fi d1">
-      <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&w=900&q=82"
-           alt="Eventos y Celebraciones">
+      <img src="foto-servicio2.png" alt="Eventos y Celebraciones">
       <div class="svc-mask"></div>
       <div class="svc-body">
         <div class="svc-n">02</div>
@@ -464,8 +474,7 @@ footer{background:#070707;padding:60px 64px;border-top:1px solid rgba(255,255,25
     </div>
     <!-- Service 3: Coffee Break -->
     <div class="svc-card fi d2">
-      <img src="https://images.unsplash.com/photo-1551024601-bec78d6a5bc0?auto=format&fit=crop&w=900&q=82"
-           alt="Coffee Breaks y Brunch">
+      <img src="foto-servicio3.png" alt="Coffee Breaks y Brunch">
       <div class="svc-mask"></div>
       <div class="svc-body">
         <div class="svc-n">03</div>
@@ -496,47 +505,63 @@ footer{background:#070707;padding:60px 64px;border-top:1px solid rgba(255,255,25
     <a href="https://www.instagram.com/bistro.caterings/" target="_blank" class="btn-o fi">Ver en Instagram</a>
   </div>
   <div class="gal-grid fi">
-    <!-- BIG: Mesa de brunch corporativo abundante con jugos y pasteles -->
+    <!-- GAL 1 (grande) -->
     <div class="gal-item">
-      <img src="https://images.unsplash.com/photo-1551024601-bec78d6a5bc0?auto=format&fit=crop&w=900&q=85"
-           alt="Mesa de brunch corporativo">
+      <img src="galeria-1.png" alt="Mesa de catering corporativo Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
-    <!-- Finger food / aperitivos variados -->
+    <!-- GAL 2 -->
     <div class="gal-item">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=82"
-           alt="Finger food aperitivos">
+      <img src="galeria-2.png" alt="Evento corporativo Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
-    <!-- Croissants y pasteles -->
+    <!-- GAL 3 -->
     <div class="gal-item">
-      <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=600&q=82"
-           alt="Pasteles y croissants">
+      <img src="galeria-3.png" alt="Mesa de dulces y postres Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
-    <!-- Jugos de naranja en copas estilo Bistró -->
+    <!-- GAL 4 -->
     <div class="gal-item">
-      <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=600&q=82"
-           alt="Jugos de naranja en copas">
+      <img src="galeria-4.png" alt="Coffee break corporativo Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
-    <!-- Mesa de catering evento corporativo -->
+    <!-- GAL 5 -->
     <div class="gal-item">
-      <img src="https://images.unsplash.com/photo-1540189549336-e6e99286a422?auto=format&fit=crop&w=600&q=82"
-           alt="Variedad de platos catering">
+      <img src="galeria-5.png" alt="Evento especial Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
-    <!-- Bandeja de aperitivos elegante -->
+    <!-- GAL 6 -->
     <div class="gal-item">
-      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=82"
-           alt="Bandeja de aperitivos">
+      <img src="galeria-6.png" alt="Macarons y canapés Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
-    <!-- Desayuno ejecutivo con flores -->
+    <!-- GAL 7 -->
     <div class="gal-item">
-      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=82"
-           alt="Desayuno ejecutivo">
+      <img src="galeria-7.png" alt="Brunch exterior Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ VIDEOS ══════════ -->
+<section id="videos" class="sec">
+  <div class="vid-hdr fi">
+    <div class="lbl">Bistró en Acción</div>
+    <h2 class="ttl">Experiencias que <em>hablan</em><br>por sí solas</h2>
+    <p>Cada evento es único. Aquí una muestra de lo que creamos para nuestros clientes.</p>
+  </div>
+  <div class="vid-grid">
+    <div class="vid-item fi">
+      <video controls preload="metadata" poster="video1-poster.jpg">
+        <source src="video1.mp4" type="video/mp4">
+      </video>
+      <div class="vid-label">Coffee Break Corporativo</div>
+    </div>
+    <div class="vid-item fi d1">
+      <video controls preload="metadata" poster="video2-poster.jpg">
+        <source src="video2.mp4" type="video/mp4">
+      </video>
+      <div class="vid-label">Evento Masivo Empresarial</div>
     </div>
   </div>
 </section>
@@ -728,14 +753,7 @@ footer{background:#070707;padding:60px 64px;border-top:1px solid rgba(255,255,25
   <div class="ft-grid">
     <div class="ft-brand">
       <a href="#" class="logo">
-        <svg width="38" height="38" viewBox="0 0 42 42" fill="none">
-          <circle cx="21" cy="21" r="21" fill="#F5C200"/>
-          <line x1="15" y1="8.5" x2="15" y2="17" stroke="#1a0e00" stroke-width="2.4" stroke-linecap="round"/>
-          <line x1="21" y1="8.5" x2="21" y2="17" stroke="#1a0e00" stroke-width="2.4" stroke-linecap="round"/>
-          <line x1="27" y1="8.5" x2="27" y2="17" stroke="#1a0e00" stroke-width="2.4" stroke-linecap="round"/>
-          <path d="M15 17 Q15 22 18.5 23 L18.5 33.5 L23.5 33.5 L23.5 23 Q27 22 27 17"
-                fill="none" stroke="#1a0e00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <img src="logo-bistro.png" alt="Bistró Logo" width="38" height="38" style="border-radius:8px;object-fit:contain">
         <span class="logo-name" style="font-size:19px">BISTRÓ</span>
       </a>
       <p>Catering corporativo y eventos en Santiago. Calidad y precio justo para tu evento especial.</p>
