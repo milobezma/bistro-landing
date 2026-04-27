@@ -636,9 +636,15 @@ img{display:block;max-width:100%}
 .cli-hdr { margin-bottom: 52px; }
 .cli-hdr p { color: rgba(255,255,255,.42); font-size: 14px; line-height: 1.7; max-width: 440px; margin: 10px auto 0; }
 .cli-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 22px;
+}
+.cli-grid > .cli-card {
+  flex: 1 1 calc(25% - 22px);
+  max-width: calc(25% - 22px);
+  min-width: 180px;
 }
 .cli-card {
   padding: 36px 24px 28px;
@@ -929,7 +935,7 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
   .gal-grid { grid-template-columns: repeat(3,1fr); grid-template-rows: 220px 220px; grid-auto-rows: 220px; }
   .gal-item:first-child { grid-column: span 2; grid-row: span 1; }
   .gal-item:last-child { display: none; }
-  .cli-grid { grid-template-columns: repeat(3,1fr); }
+  .cli-grid > .cli-card { flex: 1 1 calc(33.333% - 22px); max-width: calc(33.333% - 22px); }
   .rev-grid { grid-template-columns: 1fr 1fr; }
   .ft-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
   #trust { gap: 28px; padding: 22px 40px; }
@@ -949,7 +955,7 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
   .gal-top { flex-direction: column; align-items: flex-start; gap: 14px; }
   .gal-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 190px 190px 190px; }
   .gal-item:first-child { grid-column: span 2; grid-row: span 1; }
-  .cli-grid { grid-template-columns: repeat(2,1fr); }
+  .cli-grid > .cli-card { flex: 1 1 calc(50% - 22px); max-width: calc(50% - 22px); }
   .cli-card { padding: 24px 14px; }
   .rev-grid { grid-template-columns: 1fr; }
   .form2 { grid-template-columns: 1fr; }
@@ -1213,18 +1219,14 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
       <div class="cli-name">Just Logistic</div>
     </div>
     <div class="cli-card" style="transition-delay:.25s">
-      <div class="cli-logo-wrap"><img src="logo%20colina.png" alt="Colina"></div>
-      <div class="cli-name">Colina</div>
-    </div>
-    <div class="cli-card" style="transition-delay:.3s">
       <div class="cli-logo-wrap"><img src="logo%20work-med.png" alt="WorkMed"></div>
       <div class="cli-name">WorkMed</div>
     </div>
-    <div class="cli-card" style="transition-delay:.35s">
+    <div class="cli-card" style="transition-delay:.3s">
       <div class="cli-logo-wrap"><img src="logo%20banco%20santander.png" alt="Santander"></div>
       <div class="cli-name">Santander</div>
     </div>
-    <div class="cli-card" style="transition-delay:.4s">
+    <div class="cli-card" style="transition-delay:.35s">
       <div class="cli-logo-wrap"><img src="logo%20entel.png" alt="Entel"></div>
       <div class="cli-name">Entel</div>
     </div>
