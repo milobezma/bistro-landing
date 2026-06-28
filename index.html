@@ -3,11 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bistró — Catering Corporativo & Eventos | Santiago, Chile</title>
-<meta name="description" content="Catering corporativo y eventos en Santiago. Experiencias gastronómicas únicas. Cotiza con nosotros: cantidad de personas, presupuesto y más.">
-<meta property="og:title" content="Bistró — Catering Corporativo Santiago">
-<meta property="og:description" content="Creamos experiencias gastronómicas únicas para tus eventos corporativos. Calidad, sabor y presentación impecable en Santiago, Chile.">
+<title>Catering Corporativo en Santiago | Coffee Breaks y Eventos de Empresa — Bistró</title>
+<meta name="description" content="Catering corporativo en Santiago: coffee breaks, almuerzos y eventos de empresa con presentación de primer nivel. Cotización gratis sin compromiso en menos de 24 horas.">
+<meta name="keywords" content="catering corporativo santiago, coffee break empresa, catering eventos empresa, almuerzo corporativo, cóctel empresa santiago, banquetería corporativa">
+<meta name="geo.region" content="CL-RM">
+<meta name="geo.placename" content="Santiago, Chile">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Catering Corporativo en Santiago — Bistró">
+<meta property="og:description" content="Coffee breaks, almuerzos y eventos de empresa con presentación impecable. Cotiza gratis en menos de 24h.">
 <meta property="og:image" content="foto-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Caterer", "LocalBusiness"],
+  "name": "Bistró Catering",
+  "description": "Catering corporativo y eventos de empresa en Santiago de Chile: coffee breaks, almuerzos, cócteles y celebraciones con presentación de primer nivel.",
+  "image": "foto-hero.png",
+  "telephone": "+56977797388",
+  "email": "contacto@bistroexpress.cl",
+  "priceRange": "$$",
+  "areaServed": { "@type": "City", "name": "Santiago" },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santiago",
+    "addressRegion": "Región Metropolitana",
+    "addressCountry": "CL"
+  },
+  "sameAs": ["https://www.instagram.com/bistro.caterings/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es el mínimo de personas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Por norma trabajamos desde 20 personas en todos nuestros servicios. Para grupos más pequeños, escríbenos y lo vemos caso a caso." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hasta dónde llegan en Santiago?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cobertura completa del Gran Santiago, además de Chicureo, Colina y Valle Grande. Para otras zonas, consúltanos." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Manejan menús vegetarianos, veganos o sin gluten?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, en todos los servicios. Indícalo al cotizar y adaptamos el menú a requerimientos dietéticos, alergias e intolerancias." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Con cuánta anticipación hay que reservar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Coffee breaks corporativos: 7 días mínimo. Eventos de más de 100 personas: 3 semanas. Diciembre se llena en septiembre, así que conviene anticiparse." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo es el proceso de pago?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Se abona el 50% para confirmar la fecha y el saldo según lo acordado. Emitimos factura para empresas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si tengo que cancelar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hasta 7 días antes: reembolso completo del anticipo. Entre 7 y 3 días: 50%. Menos de 72 horas: no reembolsable." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En cuánto tiempo responden?",
+      "acceptedAnswer": { "@type": "Answer", "text": "En menos de 24 horas hábiles. Si tienes urgencia, por WhatsApp normalmente te respondemos mucho antes." }
+    }
+  ]
+}
+</script>
+<!-- TODO: configurar gtag (GA4). Pegar aquí el snippet de Google tag para activar el tracking de eventos: cta_whatsapp_click, form_start, form_submit, pricing_view. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -34,103 +103,6 @@ img{display:block;max-width:100%}
 ::-webkit-scrollbar-track{background:var(--dark)}
 ::-webkit-scrollbar-thumb{background:var(--ya);border-radius:3px}
 
-/* ══════════ INTRO ANIMATION ══════════ */
-#intro {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: var(--dark);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
-  transition: opacity .9s ease, visibility .9s ease;
-}
-#intro.hide { opacity: 0; visibility: hidden; pointer-events: none; }
-.intro-ring {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.intro-ring::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1.5px solid rgba(201,162,39,0.2);
-  animation: ringPulse 2.5s ease infinite;
-}
-.intro-ring::after {
-  content: '';
-  position: absolute;
-  inset: -16px;
-  border-radius: 50%;
-  border: 1px solid rgba(201,162,39,0.08);
-  animation: ringPulse 2.5s ease .4s infinite;
-}
-@keyframes ringPulse {
-  0%,100% { transform: scale(1); opacity: .5; }
-  50%      { transform: scale(1.08); opacity: 1; }
-}
-.intro-logo {
-  width: 90px;
-  height: 90px;
-  border-radius: 18px;
-  object-fit: contain;
-  opacity: 0;
-  transform: scale(.7);
-  animation: logoIn 1s cubic-bezier(.22,1,.36,1) .3s forwards;
-}
-@keyframes logoIn {
-  to { opacity: 1; transform: scale(1); }
-}
-.intro-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 38px;
-  font-weight: 500;
-  letter-spacing: 10px;
-  color: #fff;
-  opacity: 0;
-  transform: translateY(16px);
-  animation: fadeup .8s ease .9s forwards;
-}
-.intro-tag {
-  font-size: 10px;
-  letter-spacing: 4.5px;
-  text-transform: uppercase;
-  color: var(--y);
-  opacity: 0;
-  animation: fadeup .7s ease 1.4s forwards;
-}
-.intro-bar {
-  width: 0;
-  height: 1.5px;
-  background: var(--yg);
-  animation: barGrow 1.8s ease 1s forwards;
-  border-radius: 2px;
-}
-@keyframes barGrow { to { width: 160px; } }
-.intro-skip {
-  position: absolute;
-  bottom: 36px;
-  right: 40px;
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  cursor: pointer;
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 8px 18px;
-  border-radius: 3px;
-  opacity: 0;
-  animation: fadeup .5s ease 2s forwards;
-  transition: color .25s, border-color .25s;
-}
-.intro-skip:hover { color: var(--y); border-color: var(--bdr); }
 
 /* ══════════ FLOATING WHATSAPP ══════════ */
 .wa-float {
@@ -381,6 +353,21 @@ img{display:block;max-width:100%}
   transition: border-color .25s, color .25s, transform .25s;
 }
 .btn-o:hover { border-color: var(--y); color: var(--y); transform: translateY(-2px); }
+.hero-rr {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+.hero-rr span {
+  font-size: 12.5px;
+  color: rgba(255,255,255,.72);
+  letter-spacing: .3px;
+  font-weight: 400;
+}
+.hero-rr span::first-letter { color: var(--y); }
+@media(max-width:768px){ .hero-rr { gap: 6px 18px; margin-top: 20px; } .hero-rr span { font-size: 11.5px; } }
 .hero-scroll {
   position: absolute;
   bottom: 34px;
@@ -753,6 +740,21 @@ img{display:block;max-width:100%}
 .rev-who strong { display: block; font-size: 13px; font-weight: 600; color: #fff; }
 .rev-who span { font-size: 11px; color: rgba(255,255,255,.38); }
 
+/* ── Google Reviews embed ── */
+.gr-embed { max-width: 1000px; margin: 0 auto; }
+.gr-fallback {
+  text-align: center;
+  padding: 52px 30px;
+  border: 1px dashed var(--bdr);
+  border-radius: 8px;
+  background: rgba(201,162,39,.03);
+}
+.gr-badge { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.gr-badge svg { width: 26px; height: 26px; }
+.gr-badge span { font-size: 14px; color: rgba(255,255,255,.82); font-weight: 600; letter-spacing: .5px; }
+.gr-stars { color: var(--y); font-size: 20px; letter-spacing: 5px; margin-bottom: 14px; }
+.gr-fallback p { font-size: 14.5px; color: rgba(255,255,255,.5); line-height: 1.75; max-width: 470px; margin: 0 auto 26px; font-weight: 300; }
+
 /* ── Deja tu reseña en Google ── */
 .rev-cta {
   margin-top: 48px;
@@ -826,8 +828,50 @@ img{display:block;max-width:100%}
   .rev-cta { padding: 42px 24px; }
 }
 
+/* ══════════ FAQ ══════════ */
+#faq { background: var(--d2); }
+.faq-hdr { text-align: center; margin-bottom: 46px; }
+.faq-wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--dark);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color .3s;
+}
+.faq-item[open] { border-color: var(--bdr); }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: #fff;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  color: var(--y);
+  flex-shrink: 0;
+  transition: transform .3s;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-a {
+  padding: 0 24px 22px;
+  font-size: 14.5px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
 /* ══════════ CONTACT / LEAD FORM ══════════ */
-#contact { background: var(--d2); }
+#contact { background: var(--dark); }
 .ct-wrap { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start; }
 .ct-info p { color: rgba(255,255,255,.52); font-size: 15px; line-height: 1.85; font-weight: 300; margin-bottom: 38px; }
 .ct-rows { display: flex; flex-direction: column; gap: 16px; }
@@ -999,6 +1043,36 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
 .form-success h3 { font-size: 26px; color: #fff; margin-bottom: 12px; }
 .form-success p { color: rgba(255,255,255,.5); font-size: 15px; line-height: 1.7; }
 
+/* ══════════ STICKY MOBILE CTA ══════════ */
+#m-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  gap: 10px;
+  background: rgba(20,17,14,.92);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--bdr);
+}
+#m-cta a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 50px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+#m-cta .m-cot { background: var(--y); color: #14110E; }
+#m-cta .m-wa { background: var(--wa); color: #fff; flex: 0 0 50px; }
+#m-cta .m-wa svg { width: 24px; height: 24px; fill: #fff; }
+
 /* ══════════ RESPONSIVE ══════════ */
 @media(max-width:1100px) {
   .sec { padding: 80px 40px; }
@@ -1035,26 +1109,170 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
   .ft-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
   .ft-bot { flex-direction: column; gap: 8px; text-align: center; }
   .vid-grid { grid-template-columns: 1fr; }
-  #trust { display: none; }
-  .wa-float { bottom: 20px; right: 20px; width: 52px; height: 52px; }
-  .intro-skip { right: 24px; bottom: 28px; }
+  #trust {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 18px;
+    padding: 20px 24px;
+  }
+  .trust-item { font-size: 10px; letter-spacing: 1px; gap: 7px; }
+  .trust-item svg { width: 14px; height: 14px; }
+  .wa-float { display: none; }
+  #m-cta { display: flex; }
+  body { padding-bottom: 72px; }
   .ct-form { padding: 24px; }
   #cta-banner { padding: 60px 24px; }
 }
+
+/* ══════════ HERO PRIMARY CTA + MICRO-LOGOS ══════════ */
+.btn-wa-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  background: var(--wa);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  border: none;
+  padding: 18px 42px;
+  border-radius: 4px;
+  font-size: 14.5px;
+  letter-spacing: .4px;
+  cursor: pointer;
+  box-shadow: 0 10px 34px rgba(37,211,102,.42);
+  transition: transform .25s, box-shadow .25s;
+}
+.btn-wa-hero:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(37,211,102,.58); }
+.btn-wa-hero svg { width: 22px; height: 22px; fill: #fff; }
+.hero-sec { margin-top: 16px; }
+.hero-sec a {
+  color: rgba(255,255,255,.66);
+  font-size: 13.5px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color .25s;
+}
+.hero-sec a:hover { color: var(--y); }
+.hero-micro { font-size: 12.5px; color: rgba(255,255,255,.5); margin-top: 18px; letter-spacing: .3px; }
+.hero-micro strong { color: var(--y); font-weight: 600; }
+.hero-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.hero-logos img {
+  height: 30px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: .5;
+  transition: opacity .25s;
+}
+.hero-logos img:hover { opacity: .85; }
+@media(max-width:768px){ .hero-logos { gap: 22px; margin-top: 30px; } .hero-logos img { height: 22px; } }
+
+/* ══════════ PRICE ANCHOR ══════════ */
+#pricing { background: var(--d2); }
+.price-hdr { text-align: center; max-width: 580px; margin: 0 auto 46px; }
+.price-hdr p { color: rgba(255,255,255,.45); font-size: 14.5px; line-height: 1.7; margin-top: 12px; }
+.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1000px; margin: 0 auto; }
+.price-card {
+  background: var(--dark);
+  border: 1px solid var(--bdr);
+  border-radius: 6px;
+  padding: 38px 30px;
+  text-align: center;
+  position: relative;
+  transition: transform .4s, border-color .4s, box-shadow .4s;
+}
+.price-card:hover { transform: translateY(-6px); border-color: rgba(201,162,39,.45); box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+.price-card.featured { border-color: rgba(201,162,39,.5); background: linear-gradient(160deg, rgba(201,162,39,.06), var(--dark)); }
+.price-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--y); margin-bottom: 14px; }
+.price-name { font-family: 'Playfair Display', serif; font-size: 23px; color: #fff; margin-bottom: 18px; font-weight: 400; }
+.price-amt {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1;
+  background: var(--yg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+}
+.price-amt small { font-size: 14px; font-weight: 400; -webkit-text-fill-color: rgba(255,255,255,.5); color: rgba(255,255,255,.5); }
+.price-min { font-size: 12.5px; color: rgba(255,255,255,.4); margin-bottom: 24px; }
+.price-card .price-link {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--y);
+  border: 1px solid var(--bdr);
+  padding: 11px 26px;
+  border-radius: 3px;
+  transition: background .25s, color .25s;
+}
+.price-card .price-link:hover { background: var(--y); color: #14110E; }
+.price-note { text-align: center; font-size: 12px; color: rgba(255,255,255,.32); margin-top: 28px; max-width: 600px; margin-left: auto; margin-right: auto; }
+@media(max-width:768px){ .price-grid { grid-template-columns: 1fr; } }
+
+/* ══════════ HOW WE WORK ══════════ */
+#how { background: var(--dark); }
+.how-hdr { text-align: center; margin-bottom: 54px; }
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 980px; margin: 0 auto; }
+.how-step { text-align: center; padding: 0 12px; }
+.how-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 500;
+  background: var(--yg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+}
+.how-step h3 { font-family: 'Playfair Display', serif; font-size: 21px; color: #fff; margin-bottom: 12px; font-weight: 400; }
+.how-step p { font-size: 14px; color: rgba(255,255,255,.52); line-height: 1.7; font-weight: 300; }
+@media(max-width:768px){ .how-grid { grid-template-columns: 1fr; gap: 38px; } }
+
+/* ══════════ TRUST SIGNALS RIBBON ══════════ */
+#signals { background: rgba(201,162,39,.05); border-top: 1px solid var(--bdr); border-bottom: 1px solid var(--bdr); padding: 34px 64px; }
+.sig-wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 40px; max-width: 1120px; margin: 0 auto; }
+.sig-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,.62); font-weight: 400; }
+.sig-item svg { width: 18px; height: 18px; color: var(--y); flex-shrink: 0; }
+@media(max-width:768px){ #signals { padding: 28px 24px; } .sig-wrap { gap: 14px 24px; } .sig-item { font-size: 12px; } }
+
+/* ══════════ FORM EXTRA DETAILS TOGGLE ══════════ */
+.form-toggle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  background: transparent;
+  border: 1px dashed var(--bdr);
+  border-radius: 3px;
+  color: var(--y);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 14px 16px;
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: background .25s, border-color .25s;
+}
+.form-toggle:hover { background: rgba(201,162,39,.05); border-color: rgba(201,162,39,.4); }
+.form-toggle::before { content: '+'; font-size: 18px; line-height: 1; }
+.form-toggle.open::before { content: '–'; }
+.form-extra { display: none; }
+.form-extra.open { display: block; }
 </style>
 </head>
 <body>
-
-<!-- ══════════ INTRO ANIMATION ══════════ -->
-<div id="intro">
-  <div class="intro-ring">
-    <img src="logo-bistro.png" alt="Bistró" class="intro-logo">
-  </div>
-  <div class="intro-bar"></div>
-  <div class="intro-name">BISTRÓ</div>
-  <div class="intro-tag">Catering Corporativo · Santiago, Chile</div>
-  <span class="intro-skip" onclick="skipIntro()">Saltar ↗</span>
-</div>
 
 <!-- ══════════ FLOATING WHATSAPP ══════════ -->
 <a class="wa-float" href="https://wa.me/56977797388?text=Hola%20Bistró%2C%20me%20gustaría%20cotizar%20un%20catering%20para%20mi%20empresa." target="_blank" rel="noopener" aria-label="WhatsApp Bistró">
@@ -1065,14 +1283,22 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
   <span class="wa-label">¡Cotiza por WhatsApp!</span>
 </a>
 
+<!-- ══════════ STICKY MOBILE CTA ══════════ -->
+<div id="m-cta">
+  <a href="#contact" class="m-cot">Cotiza gratis tu evento</a>
+  <a class="m-wa" href="https://wa.me/56977797388?text=Hola%20Bistró%2C%20me%20gustaría%20cotizar%20un%20catering%20para%20mi%20empresa." target="_blank" rel="noopener" aria-label="WhatsApp Bistró">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
 <!-- ══════════ MOBILE MENU ══════════ -->
 <div id="mob-menu">
   <span id="mob-close" onclick="closeMob()">×</span>
-  <a href="#about" onclick="closeMob()">Nosotros</a>
   <a href="#services" onclick="closeMob()">Servicios</a>
+  <a href="#pricing" onclick="closeMob()">Precios</a>
   <a href="#gallery" onclick="closeMob()">Galería</a>
-  <a href="#clients" onclick="closeMob()">Clientes</a>
   <a href="#reviews" onclick="closeMob()">Reseñas</a>
+  <a href="#faq" onclick="closeMob()">Preguntas</a>
   <a href="#contact" onclick="closeMob()" style="color:var(--y)">Cotizar</a>
 </div>
 
@@ -1083,12 +1309,11 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
     <span class="logo-name">BISTRÓ</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">Nosotros</a></li>
     <li><a href="#services">Servicios</a></li>
+    <li><a href="#pricing">Precios</a></li>
     <li><a href="#gallery">Galería</a></li>
-    <li><a href="#videos">Videos</a></li>
-    <li><a href="#clients">Clientes</a></li>
     <li><a href="#reviews">Reseñas</a></li>
+    <li><a href="#faq">Preguntas</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Cotizar Ahora</a>
   <div class="ham" id="ham" onclick="openMob()"><span></span><span></span><span></span></div>
@@ -1096,18 +1321,30 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
 
 <!-- ══════════ HERO ══════════ -->
 <section id="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="foto-hero.png">
     <source src="Mesa-Bistro.mp4" type="video/mp4">
   </video>
   <div class="hero-dark"></div>
   <div class="hero-warm"></div>
   <div class="hero-inner">
     <div class="pill">Catering Corporativo · Santiago, Chile</div>
-    <h1 class="hero-h1">Sabor que<br><em>une a las personas</em></h1>
-    <p class="hero-sub">Creamos experiencias gastronómicas únicas para eventos corporativos y celebraciones especiales. Calidad, sabor y presentación impecable.</p>
+    <h1 class="hero-h1">Catering corporativo que tus<br>colaboradores <em>van a recordar</em></h1>
+    <p class="hero-sub">+160 eventos en Santiago sin un solo reclamo. Coffee breaks, almuerzos ejecutivos y celebraciones de empresa con propuesta personalizada en menos de 24 horas.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-y">🍽️ &nbsp;Cotiza tu Evento</a>
-      <a href="https://wa.me/56977797388?text=Hola%20Bistró%2C%20me%20gustaría%20cotizar." target="_blank" class="btn-o">💬 &nbsp;WhatsApp</a>
+      <!-- CTA primario dominante: WhatsApp (canal de cierre principal) -->
+      <a href="https://wa.me/56977797388?text=Hola%20Bistró%2C%20me%20gustaría%20cotizar%20un%20catering%20para%20mi%20empresa." target="_blank" rel="noopener" class="btn-wa-hero" onclick="/* gtag('event','cta_whatsapp_click',{location:'hero'}) */">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Cotizar por WhatsApp
+      </a>
+    </div>
+    <div class="hero-micro">Respuesta en menos de 24h · Sin compromiso</div>
+    <div class="hero-sec"><a href="#contact">o llena el formulario</a></div>
+    <!-- Social proof inmediato: micro-logos de clientes top -->
+    <div class="hero-logos">
+      <img loading="lazy" decoding="async" src="Logo-universidad-catolica.jpeg" alt="Universidad Católica">
+      <img loading="lazy" decoding="async" src="Logo-banco-estado.jpg" alt="Banco Estado">
+      <img loading="lazy" decoding="async" src="logo%20entel.png" alt="Entel">
+      <img loading="lazy" decoding="async" src="logo%20banco%20santander.png" alt="Santander">
     </div>
   </div>
   <div class="hero-scroll">
@@ -1136,11 +1373,44 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
   </div>
 </div>
 
+<!-- ══════════ COTIZACIÓN A MEDIDA ══════════ -->
+<section id="pricing" class="sec">
+  <div class="price-hdr fi">
+    <div class="lbl">Cotización personalizada</div>
+    <h2 class="ttl">Un precio <em>a tu medida</em></h2>
+    <p>No trabajamos con tarifas fijas: cada evento es distinto. Armamos el menú, el formato y el precio según tus requerimientos, y te lo enviamos en una cotización personalizada en menos de 24 horas.</p>
+  </div>
+  <div class="price-grid">
+    <div class="price-card fi">
+      <div class="price-tag">Coffee Break</div>
+      <div class="price-name">Pausas & Desayunos</div>
+      <div class="price-amt">A tu medida</div>
+      <div class="price-min">Según menú y cantidad de personas</div>
+      <a class="price-link" href="https://wa.me/56977797388?text=Hola%20Bistró%2C%20quiero%20cotizar%20un%20coffee%20break%20para%20mi%20empresa." target="_blank" rel="noopener">Pedir cotización</a>
+    </div>
+    <div class="price-card featured fi d1">
+      <div class="price-tag">Almuerzo Ejecutivo</div>
+      <div class="price-name">Almuerzos de Trabajo</div>
+      <div class="price-amt">A tu medida</div>
+      <div class="price-min">Según menú y cantidad de personas</div>
+      <a class="price-link" href="https://wa.me/56977797388?text=Hola%20Bistró%2C%20quiero%20cotizar%20un%20almuerzo%20ejecutivo%20para%20mi%20empresa." target="_blank" rel="noopener">Pedir cotización</a>
+    </div>
+    <div class="price-card fi d2">
+      <div class="price-tag">Eventos Personalizados</div>
+      <div class="price-name">Celebraciones & Masivos</div>
+      <div class="price-amt">A tu medida</div>
+      <div class="price-min">Propuesta diseñada para tu evento</div>
+      <a class="price-link" href="https://wa.me/56977797388?text=Hola%20Bistró%2C%20quiero%20cotizar%20un%20evento%20para%20mi%20empresa." target="_blank" rel="noopener">Pedir cotización</a>
+    </div>
+  </div>
+  <p class="price-note">Cuéntanos fecha, cantidad de personas y tipo de evento, y te enviamos una propuesta cerrada con menú y precio en menos de 24 horas. Sin compromiso.</p>
+</section>
+
 <!-- ══════════ ABOUT ══════════ -->
 <section id="about" class="sec">
   <div class="abt-img fi">
     <div class="abt-profile-circle">
-      <img src="Carolina.PNG" alt="Carolina — Fundadora de Bistró">
+      <img loading="lazy" decoding="async" src="Carolina.PNG" alt="Carolina — Fundadora de Bistró">
     </div>
     <div class="abt-founder-info">
       <div class="abt-founder-name">Carolina Hurtado</div>
@@ -1157,7 +1427,8 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
     <div class="stats">
       <div class="stat"><div class="stat-n" data-to="45">0+</div><div class="stat-l">Empresas clientes</div></div>
       <div class="stat"><div class="stat-n" data-to="160">0+</div><div class="stat-l">Eventos realizados</div></div>
-      <div class="stat"><div class="stat-n" data-to="12">0+</div><div class="stat-l">Menús exclusivos</div></div>
+      <!-- TODO Carolina: confirmar número real de menús exclusivos -->
+      <div class="stat"><div class="stat-n" data-to="50">0+</div><div class="stat-l">Menús exclusivos</div></div>
     </div>
   </div>
 </section>
@@ -1170,7 +1441,7 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
   </div>
   <div class="svc-grid">
     <div class="svc-card fi">
-      <img src="foto-servicio1.png" alt="Catering Corporativo">
+      <img loading="lazy" decoding="async" src="foto-servicio1.png" alt="Catering Corporativo">
       <div class="svc-mask"></div>
       <div class="svc-body">
         <div class="svc-n">01</div>
@@ -1179,7 +1450,7 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
       </div>
     </div>
     <div class="svc-card fi d1">
-      <img src="foto-servicio2.png" alt="Eventos y Celebraciones">
+      <img loading="lazy" decoding="async" src="foto-servicio2.png" alt="Eventos y Celebraciones">
       <div class="svc-mask"></div>
       <div class="svc-body">
         <div class="svc-n">02</div>
@@ -1188,13 +1459,38 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
       </div>
     </div>
     <div class="svc-card fi d2">
-      <img src="foto-servicio3.png" alt="Coffee Breaks y Brunch">
+      <img loading="lazy" decoding="async" src="foto-servicio3.png" alt="Coffee Breaks y Brunch">
       <div class="svc-mask"></div>
       <div class="svc-body">
         <div class="svc-n">03</div>
         <h3 class="svc-t">Coffee Breaks & Brunch</h3>
         <p class="svc-d">Pausas perfectas para seminarios, reuniones y talleres corporativos con presentación impecable.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ HOW WE WORK ══════════ -->
+<section id="how" class="sec">
+  <div class="how-hdr fi">
+    <div class="lbl">Cómo trabajamos</div>
+    <h2 class="ttl">Cotizar es <em>simple</em></h2>
+  </div>
+  <div class="how-grid">
+    <div class="how-step fi">
+      <div class="how-num">01</div>
+      <h3>Cotizas</h3>
+      <p>Cuéntanos por WhatsApp o formulario los datos básicos: fecha, cantidad de personas y tipo de evento.</p>
+    </div>
+    <div class="how-step fi d1">
+      <div class="how-num">02</div>
+      <h3>Te enviamos propuesta</h3>
+      <p>En menos de 24 horas recibes el menú, el montaje y el precio cerrado, listo para aprobar.</p>
+    </div>
+    <div class="how-step fi d2">
+      <div class="how-num">03</div>
+      <h3>Ejecutamos</h3>
+      <p>Llegamos antes, montamos y atendemos. Tú solo te encargas de recibir a tu equipo.</p>
     </div>
   </div>
 </section>
@@ -1210,35 +1506,35 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
   </div>
   <div class="gal-grid fi">
     <div class="gal-item">
-      <img src="galeria-1.png" alt="Mesa de catering corporativo Bistró">
+      <img loading="lazy" decoding="async" src="galeria-1.png" alt="Mesa de catering corporativo Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
     <div class="gal-item">
-      <img src="galeria-2.png" alt="Evento corporativo Bistró">
+      <img loading="lazy" decoding="async" src="galeria-2.png" alt="Evento corporativo Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
     <div class="gal-item">
-      <img src="galeria-3.png" alt="Mesa de dulces y postres Bistró">
+      <img loading="lazy" decoding="async" src="galeria-3.png" alt="Mesa de dulces y postres Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
     <div class="gal-item">
-      <img src="galeria-4.png" alt="Coffee break corporativo Bistró">
+      <img loading="lazy" decoding="async" src="galeria-4.png" alt="Coffee break corporativo Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
     <div class="gal-item">
-      <img src="galeria-5.png" alt="Evento especial Bistró">
+      <img loading="lazy" decoding="async" src="galeria-5.png" alt="Evento especial Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
     <div class="gal-item">
-      <img src="galeria-6.png" alt="Macarons y canapés Bistró">
+      <img loading="lazy" decoding="async" src="galeria-6.png" alt="Macarons y canapés Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
     <div class="gal-item">
-      <img src="galeria-7.jpg" alt="Brunch exterior Bistró">
+      <img loading="lazy" decoding="async" src="galeria-7.jpg" alt="Brunch exterior Bistró">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
     <div class="gal-item">
-      <img src="foto-nosotros.png" alt="Equipo Bistró Catering">
+      <img loading="lazy" decoding="async" src="foto-nosotros.png" alt="Equipo Bistró Catering">
       <div class="gal-ov"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
     </div>
   </div>
@@ -1276,31 +1572,31 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
   </div>
   <div class="cli-grid">
     <div class="cli-card" style="transition-delay:.05s">
-      <div class="cli-logo-wrap"><img src="Logo-universidad-catolica.jpeg" alt="Universidad Católica de Chile"></div>
+      <div class="cli-logo-wrap"><img loading="lazy" decoding="async" src="Logo-universidad-catolica.jpeg" alt="Universidad Católica de Chile"></div>
       <div class="cli-name">Universidad Católica</div>
     </div>
     <div class="cli-card" style="transition-delay:.1s">
-      <div class="cli-logo-wrap"><img src="Logo-banco-estado.jpg" alt="Banco Estado"></div>
+      <div class="cli-logo-wrap"><img loading="lazy" decoding="async" src="Logo-banco-estado.jpg" alt="Banco Estado"></div>
       <div class="cli-name">Banco Estado</div>
     </div>
     <div class="cli-card" style="transition-delay:.15s">
-      <div class="cli-logo-wrap"><img src="logo%20endress%20%2Bhausser.png" alt="Endress+Hauser"></div>
+      <div class="cli-logo-wrap"><img loading="lazy" decoding="async" src="logo%20endress%20%2Bhausser.png" alt="Endress+Hauser"></div>
       <div class="cli-name">Endress+Hauser</div>
     </div>
     <div class="cli-card" style="transition-delay:.2s">
-      <div class="cli-logo-wrap"><img src="just%20logistic%20logo.jpeg" alt="Just Logistic"></div>
+      <div class="cli-logo-wrap"><img loading="lazy" decoding="async" src="just%20logistic%20logo.jpeg" alt="Just Logistic"></div>
       <div class="cli-name">Just Logistic</div>
     </div>
     <div class="cli-card" style="transition-delay:.25s">
-      <div class="cli-logo-wrap"><img src="logo%20work-med.png" alt="WorkMed"></div>
+      <div class="cli-logo-wrap"><img loading="lazy" decoding="async" src="logo%20work-med.png" alt="WorkMed"></div>
       <div class="cli-name">WorkMed</div>
     </div>
     <div class="cli-card" style="transition-delay:.3s">
-      <div class="cli-logo-wrap"><img src="logo%20banco%20santander.png" alt="Santander"></div>
+      <div class="cli-logo-wrap"><img loading="lazy" decoding="async" src="logo%20banco%20santander.png" alt="Santander"></div>
       <div class="cli-name">Santander</div>
     </div>
     <div class="cli-card" style="transition-delay:.35s">
-      <div class="cli-logo-wrap"><img src="logo%20entel.png" alt="Entel"></div>
+      <div class="cli-logo-wrap"><img loading="lazy" decoding="async" src="logo%20entel.png" alt="Entel"></div>
       <div class="cli-name">Entel</div>
     </div>
   </div>
@@ -1309,110 +1605,35 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
 <!-- ══════════ REVIEWS ══════════ -->
 <section id="reviews" class="sec">
   <div class="rev-hdr fi">
-    <div class="lbl">Testimonios</div>
-    <h2 class="ttl">Lo que dicen nuestros <em>clientes</em></h2>
-  </div>
-  <div class="rev-grid">
-    <div class="rev-card fi">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-q">"</div>
-      <p class="rev-txt">Bistró superó completamente nuestras expectativas en el aniversario institucional. La presentación fue impecable y la variedad del menú deleitó a todos los asistentes. Sin duda, nuestro proveedor de catering de referencia.</p>
-      <div class="rev-auth">
-        <div class="rev-ico">
-          <img src="Logo-universidad-catolica.jpeg" alt="UC">
-        </div>
-        <div class="rev-who">
-          <strong>Dirección de Comunicaciones</strong>
-          <span>P. Universidad Católica de Chile</span>
-        </div>
-      </div>
-    </div>
-    <div class="rev-card fi d1">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-q">"</div>
-      <p class="rev-txt">Llevamos más de 3 años trabajando con Bistró y nunca nos han decepcionado. Siempre puntuales, profesionales y con una propuesta gastronómica que deleita a nuestros colaboradores en cada ocasión.</p>
-      <div class="rev-auth">
-        <div class="rev-ico">
-          <img src="logo%20work-med.png" alt="Workmed" style="width:36px;height:auto;object-fit:contain">
-        </div>
-        <div class="rev-who">
-          <strong>Gerencia de Recursos Humanos</strong>
-          <span>Workmed</span>
-        </div>
-      </div>
-    </div>
-    <div class="rev-card fi d2">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-q">"</div>
-      <p class="rev-txt">La calidad y el profesionalismo de Bistró los convierten en nuestra empresa de catering para todos los eventos institucionales. Cada detalle es cuidado con esmero y la propuesta culinaria siempre sorprende gratamente.</p>
-      <div class="rev-auth">
-        <div class="rev-ico">
-          <img src="Logo-banco-estado.jpg" alt="Banco Estado">
-        </div>
-        <div class="rev-who">
-          <strong>Departamento de Eventos</strong>
-          <span>Banco Estado</span>
-        </div>
-      </div>
-    </div>
-    <div class="rev-card fi">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-q">"</div>
-      <p class="rev-txt">Para nuestros eventos técnicos y reuniones de directorio, Bistró siempre entrega un servicio de primer nivel. Su capacidad de adaptación y el nivel de detalle en cada preparación los distingue claramente.</p>
-      <div class="rev-auth">
-        <div class="rev-ico">
-          <img src="logo%20endress%20%2Bhausser.png" alt="Endress+Hauser" style="width:36px;height:36px;object-fit:contain">
-        </div>
-        <div class="rev-who">
-          <strong>Administración Chile</strong>
-          <span>Endress+Hauser Chile</span>
-        </div>
-      </div>
-    </div>
-    <div class="rev-card fi d1">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-q">"</div>
-      <p class="rev-txt">Bistró entiende perfectamente las necesidades de un equipo exigente. Sus desayunos corporativos y almuerzos de trabajo han elevado la experiencia de nuestros colaboradores. Servicio impecable y precios muy justos.</p>
-      <div class="rev-auth">
-        <div class="rev-ico">
-          <img src="just%20logistic%20logo.jpeg" alt="Just Logistic" style="border-radius:50%">
-        </div>
-        <div class="rev-who">
-          <strong>Recursos Humanos</strong>
-          <span>Just Logistic</span>
-        </div>
-      </div>
-    </div>
-    <div class="rev-card fi d2">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-q">"</div>
-      <p class="rev-txt">El catering de Bistró para nuestro lanzamiento de producto fue extraordinario. La variedad, la calidad y la atención al detalle superaron con creces nuestras expectativas. Los recomendamos ampliamente.</p>
-      <div class="rev-auth">
-        <div class="rev-ico">
-          <img src="logo%20entel.png" alt="Entel">
-        </div>
-        <div class="rev-who">
-          <strong>Equipo de Marketing</strong>
-          <span>Entel Chile</span>
-        </div>
-      </div>
-    </div>
+    <div class="lbl">Reseñas verificadas</div>
+    <h2 class="ttl">Lo que dicen nuestros <em>clientes</em> en Google</h2>
   </div>
 
-  <!-- Deja tu reseña en Google -->
-  <div class="rev-cta fi">
-    <div class="rev-cta-inner">
-      <div class="rev-cta-g">
+  <!--
+    GOOGLE REVIEWS — apartado conectado a las reseñas reales de Google.
+    Para que las reseñas se muestren EN VIVO dentro de la página, pega DENTRO de
+    #google-reviews (reemplazando el bloque .gr-fallback) el snippet de un widget
+    no-code y gratuito conectado al perfil de Google de Bistró:
+      · Trustindex → https://www.trustindex.io
+      · Elfsight   → https://elfsight.com/google-reviews-widget/
+    Pasos: crear cuenta → conectar el perfil de Google de Bistró → copiar el
+    <div>/<script> que entregan → pegarlo aquí. Mientras no esté instalado, se
+    muestra el bloque de respaldo de abajo (con enlace directo a Google).
+    TODO Carolina: instalar el widget cuando haya reseñas publicadas en Google.
+  -->
+  <div id="google-reviews" class="gr-embed fi">
+    <div class="gr-fallback">
+      <div class="gr-badge">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47a5.54 5.54 0 0 1-2.4 3.63v3h3.86c2.26-2.09 3.56-5.17 3.56-8.87z"/>
           <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09A11.99 11.99 0 0 0 12 24z"/>
           <path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29A11.99 11.99 0 0 0 0 12c0 1.94.46 3.77 1.29 5.38l3.98-3.09z"/>
           <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.69 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/>
         </svg>
+        <span>Reseñas de Google</span>
       </div>
-      <div class="rev-cta-stars">★★★★★</div>
-      <h3>¿Disfrutaste nuestro <em>servicio</em>?</h3>
-      <p>Tu opinión nos ayuda a crecer y a que más personas conozcan a Bistró. Déjanos una reseña en Google: solo te toma un minuto.</p>
+      <div class="gr-stars">★★★★★</div>
+      <p>Nuestros clientes nos califican directamente en Google. Lee las opiniones reales y verificadas de quienes ya trabajaron con nosotros.</p>
       <a href="https://g.page/r/CR0LpS4N4pfMEAE/review" target="_blank" rel="noopener" class="rev-cta-btn">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47a5.54 5.54 0 0 1-2.4 3.63v3h3.86c2.26-2.09 3.56-5.17 3.56-8.87z"/>
@@ -1420,8 +1641,11 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
           <path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29A11.99 11.99 0 0 0 0 12c0 1.94.46 3.77 1.29 5.38l3.98-3.09z"/>
           <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.69 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/>
         </svg>
-        Escribir reseña en Google
+        Ver reseñas en Google
       </a>
+      <div style="margin-top:18px">
+        <a href="https://g.page/r/CR0LpS4N4pfMEAE/review" target="_blank" rel="noopener" style="color:rgba(255,255,255,.6);font-size:13px;text-decoration:underline;text-underline-offset:4px">o deja tu reseña</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1433,14 +1657,62 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
   <a href="#contact" class="btn-dark">Solicitar Cotización Gratis</a>
 </div>
 
+<!-- ══════════ FAQ ══════════ -->
+<section id="faq" class="sec">
+  <div class="faq-hdr fi">
+    <div class="lbl">Preguntas Frecuentes</div>
+    <h2 class="ttl">Resolvemos tus <em>dudas</em></h2>
+  </div>
+  <div class="faq-wrap">
+    <details class="faq-item fi">
+      <summary>¿Cuál es el mínimo de personas?</summary>
+      <div class="faq-a">Por norma trabajamos desde 20 personas en todos nuestros servicios. Para grupos más pequeños, escríbenos y lo vemos caso a caso.</div>
+    </details>
+    <details class="faq-item fi">
+      <summary>¿Hasta dónde llegan en Santiago?</summary>
+      <div class="faq-a">Cobertura completa del Gran Santiago, además de Chicureo, Colina y Valle Grande. Para otras zonas, consúltanos.</div>
+    </details>
+    <details class="faq-item fi">
+      <summary>¿Manejan menús vegetarianos, veganos o sin gluten?</summary>
+      <div class="faq-a">Sí, en todos los servicios. Indícalo al cotizar y adaptamos el menú a requerimientos dietéticos, alergias e intolerancias.</div>
+    </details>
+    <details class="faq-item fi">
+      <summary>¿Con cuánta anticipación hay que reservar?</summary>
+      <div class="faq-a">Coffee breaks corporativos: 7 días mínimo. Eventos de más de 100 personas: 3 semanas. Diciembre se llena en septiembre, así que conviene anticiparse.</div>
+    </details>
+    <details class="faq-item fi">
+      <summary>¿Cómo es el proceso de pago?</summary>
+      <div class="faq-a">Se abona el 50% para confirmar la fecha y el saldo según lo acordado. Emitimos factura para empresas.</div>
+    </details>
+    <details class="faq-item fi">
+      <summary>¿Qué pasa si tengo que cancelar?</summary>
+      <!-- TODO Carolina: confirmar política real de cancelación -->
+      <div class="faq-a">Hasta 7 días antes: reembolso completo del anticipo. Entre 7 y 3 días: 50%. Menos de 72 horas: no reembolsable.</div>
+    </details>
+    <details class="faq-item fi">
+      <summary>¿En cuánto tiempo responden?</summary>
+      <div class="faq-a">En menos de 24 horas hábiles. Si tienes urgencia, por WhatsApp normalmente te respondemos mucho antes.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ══════════ TRUST SIGNALS RIBBON ══════════ -->
+<div id="signals">
+  <div class="sig-wrap">
+    <div class="sig-item"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Facturamos a empresas</div>
+    <div class="sig-item"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>+160 eventos sin retrasos</div>
+    <div class="sig-item"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Menús vegetarianos, veganos y sin gluten</div>
+    <div class="sig-item"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Equipo propio: cocina, servicio y montaje</div>
+    <div class="sig-item"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Cobertura Gran Santiago</div>
+    <div class="sig-item"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Atención directa con Carolina, fundadora</div>
+  </div>
+</div>
+
 <!-- ══════════ CONTACT / LEAD QUALIFICATION FORM ══════════ -->
 <!--
   CONFIGURACIÓN DE EMAIL:
-  Para activar el envío de emails a Caro.hur.vie@gmail.com:
-  1. Ir a https://formsubmit.co/
-  2. Enviar el primer formulario (activará el email automáticamente)
-  3. Recibirás un email de confirmación en Caro.hur.vie@gmail.com — confírmalo
-  4. ¡Listo! Todos los formularios llegarán a ese correo.
+  Las cotizaciones del formulario llegan a contacto@bistroexpress.cl (vía FormSubmit).
+  Para activarlo, el primer envío dispara un email de confirmación a esa casilla; confírmalo una vez.
 -->
 <section id="contact" class="sec">
   <div class="ct-wrap">
@@ -1509,7 +1781,7 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
         </svg>
         <h3>¡Cotización Enviada!</h3>
-        <p>Gracias por contactarnos. Carolina se pondrá en contacto contigo a la brevedad con una propuesta personalizada.</p>
+        <p>Gracias por contactarnos. Carolina se pondrá en contacto contigo a la brevedad con una propuesta personalizada. Mientras tanto, mira nuestros últimos eventos en <a href="https://www.instagram.com/bistro.caterings/" target="_blank" rel="noopener" style="color:var(--y)">Instagram</a>.</p>
       </div>
 
       <form id="leadForm"
@@ -1523,13 +1795,23 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
         <input type="hidden" name="_template" value="table">
         <input type="text" name="_honey" style="display:none">
 
-        <!-- SECCIÓN 1: Detalles del Evento -->
+        <!-- SECCIÓN ÚNICA OBLIGATORIA: solo 5 campos para bajar fricción -->
         <div class="form-section">
-          <div class="form-section-title">Detalles del Evento</div>
+          <div class="form-section-title">Lo esencial para cotizar</div>
           <div style="display:flex;flex-direction:column;gap:14px">
+            <div class="form2">
+              <div class="fg">
+                <label>Nombre <span class="required-star">*</span></label>
+                <input type="text" name="Nombre" placeholder="Tu nombre" required>
+              </div>
+              <div class="fg">
+                <label>Teléfono / WhatsApp <span class="required-star">*</span></label>
+                <input type="tel" name="Teléfono" placeholder="+56 9 XXXX XXXX" pattern="[\+0-9\s]{8,15}" required>
+              </div>
+            </div>
             <div class="fg">
-              <label>Motivo / Tipo de Catering <span class="required-star">*</span></label>
-              <select name="Motivo del Catering" required>
+              <label>Tipo de Evento <span class="required-star">*</span></label>
+              <select name="Tipo de Evento" required>
                 <option value="">Selecciona el tipo de evento</option>
                 <option>Almuerzo Corporativo</option>
                 <option>Coffee Break / Desayuno Ejecutivo</option>
@@ -1538,7 +1820,7 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
                 <option>Reunión de Directorio</option>
                 <option>Brunch Corporativo</option>
                 <option>Evento Masivo (+200 personas)</option>
-                <option>Otro</option>
+                <option>Aún no sé</option>
               </select>
             </div>
             <div class="form2">
@@ -1546,79 +1828,74 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
                 <label>Cantidad de Personas <span class="required-star">*</span></label>
                 <select name="Cantidad de Personas" required>
                   <option value="">¿Cuántas personas?</option>
-                  <option>10 – 30 personas</option>
+                  <option>20 – 30 personas</option>
                   <option>31 – 60 personas</option>
                   <option>61 – 100 personas</option>
                   <option>101 – 200 personas</option>
                   <option>201 – 500 personas</option>
                   <option>Más de 500 personas</option>
+                  <option>Aún no sé</option>
                 </select>
               </div>
               <div class="fg">
-                <label>Presupuesto Aproximado (CLP) <span class="required-star">*</span></label>
-                <select name="Presupuesto en CLP" required>
-                  <option value="">Selecciona un rango</option>
-                  <option>Menos de $500.000</option>
-                  <option>$500.000 – $1.000.000</option>
-                  <option>$1.000.000 – $2.500.000</option>
-                  <option>$2.500.000 – $5.000.000</option>
-                  <option>Más de $5.000.000</option>
-                  <option>Por definir</option>
-                </select>
-              </div>
-            </div>
-            <div class="form2">
-              <div class="fg">
-                <label>Ubicación del Evento <span class="required-star">*</span></label>
-                <input type="text" name="Ubicación del Evento" placeholder="Ej: Las Condes, Santiago" required>
-              </div>
-              <div class="fg">
-                <label>Fecha Aproximada</label>
-                <input type="date" name="Fecha del Evento">
+                <label>Fecha del Evento <span class="required-star">*</span></label>
+                <input type="date" name="Fecha del Evento" id="eventDate" required>
+                <label style="display:flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.5px;text-transform:none;color:rgba(255,255,255,.5);cursor:pointer;margin-top:2px">
+                  <input type="checkbox" id="dateTBD" style="width:auto;accent-color:var(--y)"> Aún por definir
+                </label>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- SECCIÓN 2: Datos de Contacto -->
-        <div class="form-section">
-          <div class="form-section-title">Tus Datos de Contacto</div>
-          <div style="display:flex;flex-direction:column;gap:14px">
-            <div class="form2">
-              <div class="fg">
-                <label>Nombre Completo <span class="required-star">*</span></label>
-                <input type="text" name="Nombre" placeholder="Tu nombre completo" required>
+        <!-- Campos OPCIONALES colapsados -->
+        <button type="button" class="form-toggle" id="moreToggle" aria-expanded="false">Más detalles para una cotización más precisa</button>
+        <div class="form-extra" id="moreFields">
+          <div class="form-section">
+            <div class="form-section-title">Detalles opcionales</div>
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <div class="form2">
+                <div class="fg">
+                  <label>Empresa / Organización</label>
+                  <input type="text" name="Empresa" placeholder="Nombre de tu empresa">
+                </div>
+                <div class="fg">
+                  <label>Email</label>
+                  <input type="email" name="Email" placeholder="tu@empresa.com">
+                </div>
+              </div>
+              <div class="form2">
+                <div class="fg">
+                  <label>Ubicación del Evento</label>
+                  <input type="text" name="Ubicación del Evento" placeholder="Ej: Las Condes, Santiago">
+                </div>
+                <div class="fg">
+                  <label>Presupuesto Aproximado (CLP)</label>
+                  <select name="Presupuesto en CLP">
+                    <option value="Prefiero conversarlo">Prefiero conversarlo</option>
+                    <option>Menos de $500.000</option>
+                    <option>$500.000 – $1.000.000</option>
+                    <option>$1.000.000 – $2.500.000</option>
+                    <option>$2.500.000 – $5.000.000</option>
+                    <option>Más de $5.000.000</option>
+                  </select>
+                </div>
               </div>
               <div class="fg">
-                <label>Empresa / Organización</label>
-                <input type="text" name="Empresa" placeholder="Nombre de tu empresa">
+                <label>Mensaje Adicional</label>
+                <textarea name="Mensaje" placeholder="Cuéntanos más: requerimientos especiales, alergias, tipo de menú preferido..."></textarea>
               </div>
-            </div>
-            <div class="form2">
-              <div class="fg">
-                <label>Email <span class="required-star">*</span></label>
-                <input type="email" name="Email" placeholder="tu@empresa.com" required>
-              </div>
-              <div class="fg">
-                <label>Teléfono <span class="required-star">*</span></label>
-                <input type="tel" name="Teléfono" placeholder="+56 9 XXXX XXXX" required>
-              </div>
-            </div>
-            <div class="fg">
-              <label>Mensaje Adicional</label>
-              <textarea name="Mensaje" placeholder="Cuéntanos más sobre tu evento: algún requerimiento especial, alergias, tipo de menú preferido..."></textarea>
             </div>
           </div>
         </div>
 
         <button type="submit" class="btn-y" style="width:100%;padding:17px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:2.5px;justify-content:center;display:flex;align-items:center;gap:10px">
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:17px;height:17px"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
-          Enviar Cotización Ahora
+          Recibir propuesta en 24h
         </button>
-        <p style="text-align:center;font-size:11px;color:rgba(255,255,255,.2);margin-top:12px">
-          También puedes escribirnos directamente por
-          <a href="https://wa.me/56977797388" target="_blank" style="color:var(--wa)">WhatsApp</a> o
-          <a href="https://www.instagram.com/bistro.caterings/" target="_blank" style="color:var(--y)">Instagram</a>
+        <p style="text-align:center;font-size:11px;color:rgba(255,255,255,.32);margin-top:12px">
+          O escríbenos directo por
+          <a href="https://wa.me/56977797388" target="_blank" rel="noopener" style="color:var(--wa)">WhatsApp</a> — es más rápido.
         </p>
       </form>
     </div>
@@ -1630,7 +1907,7 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
   <div class="ft-grid">
     <div class="ft-brand">
       <a href="#" class="logo">
-        <img src="logo-bistro.png" alt="Bistró Logo" width="38" height="38" style="border-radius:8px;object-fit:contain">
+        <img loading="lazy" decoding="async" src="logo-bistro.png" alt="Bistró Logo" width="38" height="38" style="border-radius:8px;object-fit:contain">
         <span class="logo-name" style="font-size:19px">BISTRÓ</span>
       </a>
       <p>Catering corporativo y eventos en Santiago. Calidad y precio justo para tu evento especial.</p>
@@ -1680,12 +1957,6 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
 </footer>
 
 <script>
-// ── Intro animation
-function skipIntro() {
-  document.getElementById('intro').classList.add('hide');
-}
-setTimeout(skipIntro, 3800);
-
 // ── Navbar scroll
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -1743,6 +2014,62 @@ setTimeout(() => {
     waFloat.style.transform = 'scale(1)';
   }
 }, 4500);
+
+// ── Form: toggle de campos opcionales
+const moreToggle = document.getElementById('moreToggle');
+const moreFields = document.getElementById('moreFields');
+moreToggle.addEventListener('click', () => {
+  const open = moreFields.classList.toggle('open');
+  moreToggle.classList.toggle('open', open);
+  moreToggle.setAttribute('aria-expanded', open);
+});
+
+// ── Form: "Aún por definir" desactiva el campo de fecha
+const eventDate = document.getElementById('eventDate');
+const dateTBD = document.getElementById('dateTBD');
+dateTBD.addEventListener('change', () => {
+  if (dateTBD.checked) {
+    eventDate.value = '';
+    eventDate.required = false;
+    eventDate.disabled = true;
+    eventDate.style.opacity = '.4';
+  } else {
+    eventDate.required = true;
+    eventDate.disabled = false;
+    eventDate.style.opacity = '1';
+  }
+});
+
+// ── Tracking GA4 (placeholders). Si gtag está instalado, dispara los eventos.
+// TODO: configurar gtag (GA4) en el <head> para activar el tracking real.
+const leadForm = document.getElementById('leadForm');
+let formStarted = false;
+leadForm.addEventListener('focusin', () => {
+  if (!formStarted) {
+    formStarted = true;
+    if (window.gtag) gtag('event', 'form_start');
+  }
+});
+leadForm.addEventListener('submit', () => {
+  if (window.gtag) gtag('event', 'form_submit');
+});
+// Evento pricing_view cuando la sección de precios entra en viewport
+const pricingSec = document.getElementById('pricing');
+if (pricingSec) {
+  const pio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        if (window.gtag) gtag('event', 'pricing_view');
+        pio.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  pio.observe(pricingSec);
+}
+// Evento cta_whatsapp_click en todos los enlaces a WhatsApp
+document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+  a.addEventListener('click', () => { if (window.gtag) gtag('event', 'cta_whatsapp_click'); });
+});
 </script>
 </body>
 </html>
