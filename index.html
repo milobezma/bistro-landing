@@ -76,7 +76,14 @@
   ]
 }
 </script>
-<!-- TODO: configurar gtag (GA4). Pegar aquí el snippet de Google tag para activar el tracking de eventos: cta_whatsapp_click, form_start, form_submit, pricing_view. -->
+<!-- Google Analytics 4 (gtag) — activa el tracking de eventos: cta_whatsapp_click, form_start, form_submit, pricing_view. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VM7ME41KBZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VM7ME41KBZ');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -1622,30 +1629,10 @@ footer { background: #070707; padding: 60px 64px; border-top: 1px solid rgba(255
     TODO Carolina: instalar el widget cuando haya reseñas publicadas en Google.
   -->
   <div id="google-reviews" class="gr-embed fi">
-    <div class="gr-fallback">
-      <div class="gr-badge">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47a5.54 5.54 0 0 1-2.4 3.63v3h3.86c2.26-2.09 3.56-5.17 3.56-8.87z"/>
-          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09A11.99 11.99 0 0 0 12 24z"/>
-          <path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29A11.99 11.99 0 0 0 0 12c0 1.94.46 3.77 1.29 5.38l3.98-3.09z"/>
-          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.69 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/>
-        </svg>
-        <span>Reseñas de Google</span>
-      </div>
-      <div class="gr-stars">★★★★★</div>
-      <p>Nuestros clientes nos califican directamente en Google. Lee las opiniones reales y verificadas de quienes ya trabajaron con nosotros.</p>
-      <a href="https://g.page/r/CR0LpS4N4pfMEAE/review" target="_blank" rel="noopener" class="rev-cta-btn">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47a5.54 5.54 0 0 1-2.4 3.63v3h3.86c2.26-2.09 3.56-5.17 3.56-8.87z"/>
-          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09A11.99 11.99 0 0 0 12 24z"/>
-          <path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29A11.99 11.99 0 0 0 0 12c0 1.94.46 3.77 1.29 5.38l3.98-3.09z"/>
-          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.69 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/>
-        </svg>
-        Ver reseñas en Google
-      </a>
-      <div style="margin-top:18px">
-        <a href="https://g.page/r/CR0LpS4N4pfMEAE/review" target="_blank" rel="noopener" style="color:rgba(255,255,255,.6);font-size:13px;text-decoration:underline;text-underline-offset:4px">o deja tu reseña</a>
-      </div>
+    <!-- Widget de Trustindex conectado al perfil de Google de Bistró (reseñas reales en vivo) -->
+    <script defer async src='https://cdn.trustindex.io/loader.js?7a731a875708288112461d2a0fb'></script>
+    <div style="margin-top:24px;text-align:center">
+      <a href="https://g.page/r/CR0LpS4N4pfMEAE/review" target="_blank" rel="noopener" style="color:rgba(255,255,255,.6);font-size:13px;text-decoration:underline;text-underline-offset:4px">o deja tu reseña en Google</a>
     </div>
   </div>
 </section>
