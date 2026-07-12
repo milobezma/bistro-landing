@@ -7,24 +7,28 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 /* ── TOKENS ── */
 :root {
-  --y:    #F5C200;
-  --ya:   #E0A800;
-  --yg:   linear-gradient(135deg, #F5C200 0%, #E0A800 100%);
-  --dark: #0c0c0c;
-  --d2:   #131313;
-  --cr:   #f0e4c8;
-  --bdr:  rgba(245,194,0,0.13);
+  --brick:  #8A3B2E;
+  --brick-d:#6E2C21;
+  --clay:   #C88A6A;
+  --mustard:#CE9A34;
+  --cream:  #EDE6D6;
+  --cream2: #F5F0E4;
+  --paper:  #FBF8F0;
+  --cacao:  #3A2A22;
+  --muted:  rgba(58,42,34,.62);
+  --line:   rgba(58,42,34,.14);
+  --shadow: 0 22px 50px -26px rgba(58,42,34,.45);
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--dark);
-  color: var(--cr);
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--cacao);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,23 +37,23 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-h1, h2, h3 { font-family: 'Playfair Display', serif; }
+h1, h2, h3 { font-family: 'Comfortaa', cursive; }
 a { text-decoration: none; }
 img { display: block; max-width: 100%; }
 
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--dark); }
-::-webkit-scrollbar-thumb { background: var(--ya); border-radius: 3px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--clay); border-radius: 3px; }
 
-/* ── BACKGROUND GRAIN ── */
+/* ── BACKGROUND ATMOSPHERE ── */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(245,194,0,0.05) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(245,194,0,0.03) 0%, transparent 70%);
+    radial-gradient(ellipse 60% 45% at 50% -5%, rgba(206,154,52,0.16) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 45% at 50% 105%, rgba(200,138,106,0.14) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -63,9 +67,14 @@ body::before {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 60px 24px;
-  max-width: 560px;
-  width: 100%;
+  padding: 56px 40px 52px;
+  margin: 24px;
+  max-width: 540px;
+  width: calc(100% - 48px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
   opacity: 0;
   transform: translateY(24px);
   animation: fadeup 0.9s ease 0.1s forwards;
@@ -79,28 +88,28 @@ body::before {
   display: flex;
   align-items: center;
   gap: 11px;
-  margin-bottom: 52px;
+  margin-bottom: 40px;
   justify-content: center;
 }
 .logo-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 21px;
-  font-weight: 500;
-  color: #fff;
-  letter-spacing: 3px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brick);
+  letter-spacing: 1px;
 }
 
 /* ── CHECKMARK ── */
 .check-wrap {
-  width: 88px;
-  height: 88px;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
-  background: rgba(245,194,0,0.08);
-  border: 1px solid rgba(245,194,0,0.22);
+  background: rgba(138,59,46,0.07);
+  border: 1px solid rgba(138,59,46,0.20);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 36px;
+  margin: 0 auto 30px;
   animation: pop 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.7s both;
 }
 @keyframes pop {
@@ -108,43 +117,44 @@ body::before {
   to   { transform: scale(1);   opacity: 1; }
 }
 .check-wrap svg {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
 }
 
 /* ── RULE ── */
 .rule {
-  width: 42px;
-  height: 2px;
-  background: var(--yg);
-  margin: 20px auto 28px;
+  width: 46px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, var(--mustard), var(--clay));
+  margin: 18px auto 26px;
 }
 
 /* ── TEXT ── */
 .lbl {
   display: inline-block;
-  font-size: 10px;
-  letter-spacing: 4px;
+  font-size: 11px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--y);
+  color: var(--brick);
   margin-bottom: 14px;
 }
 .title {
-  font-size: clamp(28px, 6vw, 42px);
-  font-weight: 400;
-  color: #fff;
+  font-size: clamp(27px, 6vw, 40px);
+  font-weight: 700;
+  color: var(--cacao);
   line-height: 1.2;
 }
 .title em {
-  font-style: italic;
-  color: var(--y);
+  font-style: normal;
+  color: var(--brick);
 }
 .body-text {
-  font-size: 15px;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.85;
-  font-weight: 300;
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 400;
   max-width: 420px;
   margin: 0 auto;
 }
@@ -152,52 +162,55 @@ body::before {
 /* ── BUTTON ── */
 .btn-y {
   display: inline-block;
-  margin-top: 40px;
-  background: var(--y);
-  color: #0c0c0c;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  padding: 14px 40px;
-  border-radius: 3px;
-  transition: opacity 0.25s, transform 0.25s;
+  margin-top: 36px;
+  background: var(--brick);
+  color: #fff;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  padding: 15px 42px;
+  border-radius: 999px;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 10px 24px -12px rgba(138,59,46,0.65);
 }
 .btn-y:hover {
-  opacity: 0.85;
+  background: var(--brick-d);
   transform: translateY(-2px);
+  box-shadow: 0 16px 30px -14px rgba(138,59,46,0.7);
 }
 
 /* ── DIVIDER LINE ── */
 .sep {
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, transparent, rgba(245,194,0,0.28), transparent);
-  margin: 40px auto 0;
+  width: 100%;
+  max-width: 260px;
+  height: 1px;
+  background: var(--line);
+  margin: 38px auto 0;
 }
 
 /* ── CONTACT HINT ── */
 .hint {
   margin-top: 18px;
-  font-size: 12px;
-  color: rgba(255,255,255,0.28);
-  letter-spacing: 0.3px;
+  font-size: 13.5px;
+  color: var(--muted);
+  letter-spacing: 0.2px;
 }
 .hint a {
-  color: rgba(245,194,0,0.7);
+  color: var(--brick);
+  font-weight: 500;
   transition: color 0.2s;
 }
 .hint a:hover {
-  color: var(--y);
+  color: var(--mustard);
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 480px) {
-  .page-wrap { padding: 48px 20px; }
-  .logo { margin-bottom: 40px; }
-  .check-wrap { width: 74px; height: 74px; }
-  .check-wrap svg { width: 32px; height: 32px; }
+  .page-wrap { padding: 44px 24px 40px; border-radius: 24px; }
+  .logo { margin-bottom: 32px; }
+  .check-wrap { width: 78px; height: 78px; }
+  .check-wrap svg { width: 34px; height: 34px; }
 }
 </style>
 </head>
@@ -207,13 +220,13 @@ body::before {
 
   <!-- Logo -->
   <a href="index.html" class="logo">
-    <img src="logo-bistro.png" alt="Bistró Logo" width="40" height="40" style="border-radius:9px;object-fit:contain">
+    <img src="logo-bistro.png" alt="Bistró Logo" width="40" height="40" style="border-radius:11px;object-fit:contain">
     <span class="logo-name">BISTRÓ</span>
   </a>
 
-  <!-- Gold checkmark -->
+  <!-- Checkmark -->
   <div class="check-wrap">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#F5C200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#8A3B2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="20 6 9 17 4 12"/>
     </svg>
   </div>
@@ -222,14 +235,14 @@ body::before {
   <div class="lbl">Mensaje enviado</div>
 
   <!-- Heading -->
-  <h1 class="title">¡Cotización <em>Recibida!</em></h1>
+  <h1 class="title">¡Cotización <em>recibida!</em></h1>
 
   <!-- Decorative rule -->
   <div class="rule"></div>
 
   <!-- Body -->
   <p class="body-text">
-    Gracias por contactarnos. Carolina se pondrá en contacto contigo a la brevedad para darte una propuesta personalizada.
+    Gracias por contactarnos. Carolina se pondrá en contacto contigo a la brevedad para darte una propuesta personalizada — normalmente en menos de 24 horas.
   </p>
 
   <!-- CTA -->
@@ -239,9 +252,9 @@ body::before {
   <div class="sep"></div>
   <p class="hint">
     ¿Tienes urgencia? Escríbenos a&nbsp;
-    <a href="https://wa.me/56984194213">WhatsApp</a>
+    <a href="https://wa.me/56977797388">WhatsApp</a>
     &nbsp;o&nbsp;
-    <a href="mailto:bistrocaterings@gmail.com">bistrocaterings@gmail.com</a>
+    <a href="mailto:contacto@bistroexpress.cl">contacto@bistroexpress.cl</a>
   </p>
 
 </div>
