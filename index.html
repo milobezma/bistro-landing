@@ -324,8 +324,8 @@ em{font-style:normal}
 .rev-stars{color:var(--mustard);font-size:30px;letter-spacing:6px}
 .rev-rating .rr-txt{font-size:14px;color:var(--muted);letter-spacing:.4px}
 .rev-rating .rr-txt b{color:var(--cacao);font-weight:600}
-.gr-embed{max-width:1080px;margin:0 auto}
-.rev-actions{margin-top:30px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center}
+.rev-embed{max-width:1100px;margin:0 auto}
+.rev-actions{margin-top:36px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center}
 .rev-leave{color:var(--muted);font-size:14px;text-decoration:underline;text-underline-offset:4px}
 .rev-leave:hover{color:var(--brick)}
 
@@ -683,19 +683,17 @@ footer{background:var(--cacao);color:rgba(237,230,214,.8);padding:70px 64px 30px
   <div class="wrap">
     <div class="fi">
       <div class="lbl center">Reseñas verificadas</div>
-      <h2 class="ttl">Lo que dicen nuestros <em>clientes</em> en Google</h2>
-      <div class="rev-rating">
-        <div class="rev-stars">★★★★★</div>
-        <div class="rr-txt"><b>5.0</b> · Reseñas reales verificadas en Google</div>
-      </div>
+      <h2 class="ttl">Lo que dicen nuestros <em>clientes</em></h2>
+      <p class="sec-lead center">Empresas reales que confiaron en Bistró para sus eventos.</p>
     </div>
 
     <!--
-      GOOGLE REVIEWS — reseñas reales en vivo vía widget de Trustindex conectado al perfil de Google de Bistró.
-      Si algún día quieres cambiar el widget, reemplaza el <script> de abajo por el nuevo snippet de Trustindex/Elfsight.
+      RESEÑAS — Widget gratis de JotForm conectado a las reseñas de Bistró.
+      Para cambiarlo a futuro, reemplaza el <div> + <script> de abajo por el nuevo snippet.
     -->
-    <div id="google-reviews" class="gr-embed fi">
-      <script defer async src='https://cdn.trustindex.io/loader.js?7a731a875708288112461d2a0fb'></script>
+    <div class="rev-embed fi">
+      <div id="JFWebsiteWidget-019f53fb1a2870008c1d8922a28ab3d2aa40"></div>
+      <script src="https://www.jotform.com/website-widgets/embed/019f53fb1a2870008c1d8922a28ab3d2aa40"></script>
     </div>
 
     <div class="rev-actions fi">
