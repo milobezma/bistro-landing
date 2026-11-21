@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Carolina, cierre y footer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#222}a:hover{color:#000}
+.ph{background:#e4e4e4;border:1px dashed #8f8f8f;display:flex;align-items:center;justify-content:center;text-align:center;color:#444;font-size:12px;line-height:1.35;box-sizing:border-box;padding:8px}
+.note{font-size:11px;color:#555;font-style:italic;line-height:1.3}
+.fl{color:#ffffff;font-size:14px;min-height:36px;display:flex;align-items:center}
+.fh{margin:0;font-size:12px;font-weight:600;color:#cccccc}
+</style>
+</helmet>
+<div style="width: 375px; height: 1200px; box-sizing: border-box; background: #ffffff; color: #222222; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<section style="padding: 44px 20px 40px; display: flex; flex-direction: column; gap: 16px">
+<div class="ph" style="height: 300px; border-radius: 16px">FOTO REAL: Carolina en un montaje<br>(retrato, mirando a cámara)</div>
+<h2 style="margin: 4px 0 0; font-size: 28px; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em">Detrás de cada evento está Carolina</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #333333">Soy Carolina Hurtado, directora de Bistró. Desde 2022 hemos hecho más de 500 eventos para más de 30 empresas, y sigo revisando cada propuesta antes de que salga.</p>
+<span class="note">copy borrador: confirmar con Carolina</span>
+</section>
+
+<section style="padding: 40px 20px; background: #3a3a3a; color: #ffffff; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; color: #dddddd">fondo negro</span>
+<h2 style="margin: 0; font-size: 30px; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">¿Tienes un evento en mente?</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.45; color: #eeeeee">Cuéntanos en un par de minutos y te respondemos en menos de 1 hora hábil.</p>
+<a href="Hero-B.dc.html" style="min-height: 48px; border-radius: 999px; background: #ffffff; color: #222222; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Cotiza tu evento</a>
+<span style="font-size: 11px; color: #dddddd; text-align: center">en la web: botón amarillo con texto negro</span>
+<a href="#whatsapp" style="min-height: 44px; color: #ffffff; font-size: 14px; display: flex; align-items: center; justify-content: center">O escríbenos por WhatsApp</a>
+</section>
+
+<footer style="flex: 1 1 auto; padding: 36px 20px 28px; background: #222222; color: #ffffff; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 26px; font-weight: 800; letter-spacing: -0.02em">Bistró</span>
+<span style="font-size: 13px; color: #cccccc">Catering corporativo en Santiago</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px">
+<nav aria-label="Secciones" style="display: flex; flex-direction: column">
+<p class="fh">Secciones</p>
+<a class="fl" href="Servicios.dc.html">Servicios</a>
+<a class="fl" href="Como-funciona.dc.html">Cómo funciona</a>
+<a class="fl" href="Preguntas.dc.html">Preguntas</a>
+<a class="fl" href="Hero-B.dc.html">Cotizar</a>
+</nav>
+<div style="display: flex; flex-direction: column">
+<p class="fh">Contacto</p>
+<a class="fl" href="#whatsapp">+56 9 7779 7388</a>
+<a class="fl" href="#instagram">@bistro.caterings</a>
+<span class="fl" style="color: #cccccc">[email por definir]</span>
+</div>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #cccccc">Llegamos a Gran Santiago, Chicureo, Colina y Valle Grande. Otras zonas, a consultar.</p>
+<p style="margin: 0; font-size: 12px; color: #aaaaaa; border-top: 1px solid #555555; padding-top: 14px">© 2026 Bistró Express SpA</p>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":375,"height":1200}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

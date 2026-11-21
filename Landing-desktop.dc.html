@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Landing escritorio Bistró</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#222}a:hover{color:#000}
+.wrap{max-width:1280px;margin:0 auto;padding:0 48px;box-sizing:border-box}
+.ph{background:#e4e4e4;border:1px dashed #8f8f8f;display:flex;align-items:center;justify-content:center;text-align:center;color:#444;font-size:13px;line-height:1.35;box-sizing:border-box;padding:10px}
+.note{font-size:12px;color:#555;font-style:italic;line-height:1.3}
+.lbl{font-size:13px;font-weight:600;color:#222}
+.inp{height:46px;border:1px solid #8f8f8f;border-radius:8px;padding:0 12px;font-size:15px;font-family:inherit;box-sizing:border-box;width:100%;background:#fff;color:#222}
+.chip{min-height:44px;border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:#222;border:1px solid #8f8f8f}
+.btn{min-height:50px;border-radius:999px;font-size:15px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:0 26px;box-sizing:border-box}
+.h2{margin:0;font-size:46px;line-height:1.06;font-weight:800;letter-spacing:-0.025em}
+.h3{margin:0;font-size:26px;font-weight:800;letter-spacing:-0.01em}
+.p{margin:0;font-size:17px;line-height:1.5;color:#333}
+.go{font-size:15px;font-weight:600;min-height:44px;display:inline-flex;align-items:center;gap:6px}
+.tag{font-size:13px;padding:4px 12px;border:1px solid #8f8f8f;border-radius:999px}
+.check{display:flex;align-items:center;gap:6px}
+.fq{border-bottom:1px solid #bbb;padding:18px 0;display:flex;justify-content:space-between;gap:16px;font-size:17px;font-weight:600}
+.fl{color:#fff;font-size:15px;min-height:36px;display:flex;align-items:center}
+@media (max-width: 760px){.wrap{padding:0 20px}.h2{font-size:32px}}
+</style>
+</helmet>
+<div style="width: 100%; box-sizing: border-box; background: #ffffff; color: #222222; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif">
+
+<header style="border-bottom: 1px solid #dddddd; background: #ffffff">
+<div class="wrap" style="min-height: 76px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<span style="font-size: 28px; font-weight: 800; letter-spacing: -0.02em">Bistró</span>
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px">
+<a href="#servicios">Servicios</a><a href="#como">Cómo funciona</a><a href="#preguntas">Preguntas</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 18px">
+<a href="#whatsapp" style="font-size: 15px">WhatsApp</a>
+<a class="btn" href="#cotizar" style="background: #222222; color: #ffffff; min-height: 44px">Cotiza tu evento</a>
+</div>
+</div>
+</header>
+
+<section class="wrap" style="padding-top: 48px; padding-bottom: 40px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 7 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<h1 style="margin: 0; font-size: 64px; line-height: 1.02; font-weight: 800; letter-spacing: -0.03em">Coffee breaks, almuerzos y cócteles para tu empresa.</h1>
+<p class="p" style="font-size: 19px; max-width: 560px">Te respondemos en menos de 1 hora hábil y te enviamos la propuesta con precios en menos de 24.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 22px; font-size: 15px">
+<span class="check"><svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>Desde 20 personas</span>
+<span class="check"><svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>Gran Santiago y Chicureo</span>
+<span class="check"><svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>Factura a empresas</span>
+</div>
+<div style="position: relative; margin-top: 10px">
+<div class="ph" style="height: 300px; border-radius: 16px">FOTO REAL ANCHA: coffee break (bistro-coffee-break, recorte horizontal)</div>
+<div class="ph" style="position: absolute; right: 28px; bottom: -32px; width: 84px; height: 84px; border-radius: 999px; background: #d4d4d4; font-size: 11px">sello B</div>
+</div>
+</div>
+
+<form id="cotizar" style="flex: 5 1 380px; min-width: 0; padding: 26px; border: 1.5px solid #222222; border-radius: 16px; display: flex; flex-direction: column; gap: 14px; background: #ffffff">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 20px; font-weight: 700">¿Qué estás organizando?</span>
+<span style="font-size: 13px; color: #555555">Paso 1 de 2</span>
+</div>
+<div style="height: 4px; background: #e4e4e4; border-radius: 999px"><div style="width: 50%; height: 4px; background: #222222; border-radius: 999px"></div></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<button type="button" class="chip" style="background: #222222; color: #ffffff; border-color: #222222; font-weight: 600" aria-pressed="true">Coffee break</button>
+<button type="button" class="chip" aria-pressed="false">Almuerzo</button>
+<button type="button" class="chip" aria-pressed="false">Cóctel</button>
+<button type="button" class="chip" aria-pressed="false">Desayuno</button>
+<button type="button" class="chip" aria-pressed="false">Brunch</button>
+<button type="button" class="chip" aria-pressed="false">Otro</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 4px"><label class="lbl" for="d-personas">Personas</label><input class="inp" id="d-personas" type="number" placeholder="Ej: 40"></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><label class="lbl" for="d-fecha">Fecha</label><input class="inp" id="d-fecha" type="date"></div>
+</div>
+<label style="display: flex; align-items: center; gap: 8px; font-size: 14px; min-height: 28px"><input type="checkbox" style="width: 18px; height: 18px; margin: 0">Aún no sé la fecha</label>
+<div style="font-size: 14px; line-height: 1.4; padding: 10px 12px; border-radius: 8px; border: 1px dashed #8f8f8f; color: #444444">La propuesta se arma según tu número de personas, tu fecha y tu presupuesto.</div>
+<a class="btn" href="Form-paso-2.dc.html" style="background: #222222; color: #ffffff">Continuar</a>
+<span style="font-size: 14px; text-align: center">¿Prefieres conversarlo? <a href="#whatsapp">Escríbenos por WhatsApp</a></span>
+</form>
+</section>
+
+<section class="wrap" style="padding-top: 20px; padding-bottom: 56px; display: flex; flex-wrap: wrap; align-items: center; gap: 32px">
+<span style="font-size: 16px; flex: 0 1 auto"><strong>+500 eventos</strong> para <strong>+30 empresas</strong> desde 2022</span>
+<div style="flex: 1 1 520px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<div class="ph" style="height: 48px; border-radius: 8px">logo UC</div>
+<div class="ph" style="height: 48px; border-radius: 8px">logo BancoEstado</div>
+<div class="ph" style="height: 48px; border-radius: 8px">logo Entel</div>
+<div class="ph" style="height: 48px; border-radius: 8px">logo Santander</div>
+</div>
+</section>
+
+<section id="servicios" class="wrap" style="padding-top: 72px; padding-bottom: 72px; border-top: 1px solid #dddddd; display: flex; flex-direction: column; gap: 44px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-end; justify-content: space-between">
+<h2 class="h2" style="flex: 1 1 520px; max-width: 640px">Lo que preparamos para tu empresa</h2>
+<p class="p" style="flex: 0 1 420px">Cada propuesta se arma según tu evento, tu número de personas y tu presupuesto.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<article style="flex: 7 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div class="ph" style="height: 520px; border-radius: 16px">FOTO REAL: coffee break (4:5 o recorte alto)</div>
+<h3 class="h3" style="margin-top: 8px">Coffee breaks y desayunos</h3>
+<p class="p">Para reuniones, capacitaciones y jornadas de trabajo.</p>
+<span class="note">[TODO: qué incluye, en una línea]</span>
+<a class="go" href="#cotizar">Cotizar coffee break<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3"/></svg></a>
+</article>
+<article style="flex: 5 1 360px; min-width: 0; margin-top: 120px; display: flex; flex-direction: column; gap: 10px">
+<div class="ph" style="height: 320px; border-radius: 16px">FOTO REAL: almuerzo servido</div>
+<h3 class="h3" style="margin-top: 8px">Almuerzos corporativos</h3>
+<p class="p">Para directorios, equipos y jornadas largas. Servido a la mesa o en box lunch.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="tag">Vegetariano</span><span class="tag">Vegano</span><span class="tag">Sin gluten</span></div>
+<a class="go" href="#cotizar">Cotizar almuerzo<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3"/></svg></a>
+</article>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
+<article style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<div class="ph" style="height: 380px; border-radius: 16px">FOTO REAL: cóctel</div>
+<h3 class="h3" style="font-size: 22px; margin-top: 6px">Cócteles y eventos</h3>
+<p class="p" style="font-size: 16px">Lanzamientos, aniversarios y fin de año.</p>
+<a class="go" href="#cotizar">Cotizar</a>
+</article>
+<article style="flex: 1 1 280px; min-width: 0; margin-top: 64px; display: flex; flex-direction: column; gap: 8px">
+<div class="ph" style="height: 300px; border-radius: 16px">FOTO REAL: desayuno ejecutivo</div>
+<h3 class="h3" style="font-size: 22px; margin-top: 6px">Desayunos ejecutivos</h3>
+<p class="p" style="font-size: 16px">Reuniones de directorio a primera hora.</p>
+<a class="go" href="#cotizar">Cotizar</a>
+</article>
+<article style="flex: 1 1 280px; min-width: 0; margin-top: 20px; display: flex; flex-direction: column; gap: 8px">
+<div class="ph" style="height: 220px; border-radius: 16px">FOTO REAL: brunch</div>
+<h3 class="h3" style="font-size: 22px; margin-top: 6px">Brunch corporativo</h3>
+<p class="p" style="font-size: 16px">Bienvenidas y celebraciones de equipo.</p>
+<a class="go" href="#cotizar">Cotizar</a>
+<p class="p" style="font-size: 16px; margin-top: 18px">¿No sabes qué elegir? <a href="#whatsapp" style="font-weight: 600">Te recomendamos por WhatsApp</a></p>
+</article>
+</div>
+</section>
+
+<section style="background: #3a3a3a; color: #ffffff">
+<div class="wrap" style="padding-top: 72px; padding-bottom: 72px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 6 1 420px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 13px; color: #dddddd">fondo negro</span>
+<h2 class="h2" style="color: #ffffff">¿Más de 100 personas?</h2>
+<p class="p" style="color: #eeeeee; max-width: 480px">También hacemos eventos grandes. Para estos pedimos 3 semanas de anticipación.</p>
+<a class="btn" href="#cotizar" style="border: 1.5px solid #ffffff; color: #ffffff; align-self: flex-start">Cotizar un evento grande</a>
+</div>
+<div class="ph" style="flex: 4 1 320px; height: 440px; border-radius: 16px; background: #555555; color: #ffffff; border-color: #aaaaaa">VIDEO: evento grande (8 s, sin sonido, en loop)<br>recorte 4:5, cuadro fijo mientras carga<br>requiere OK por las caras</div>
+</div>
+</section>
+
+<section id="como" style="background: #f4f4f4">
+<div class="wrap" style="padding-top: 72px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between">
+<h2 class="h2" style="flex: 1 1 520px; max-width: 700px">De tu solicitud a tu evento, en 4 pasos</h2>
+<a class="btn" href="#cotizar" style="background: #222222; color: #ffffff">Cotiza tu evento</a>
+</div>
+<div style="position: relative">
+<div aria-hidden="true" style="position: absolute; left: 20px; right: 20px; top: 20px; height: 2px; background: #bbbbbb"></div>
+<ol style="margin: 0; padding: 0; list-style: none; position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
+<li style="display: flex; flex-direction: column; gap: 12px"><span style="width: 40px; height: 40px; border-radius: 999px; background: #222222; color: #ffffff; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span><h3 class="h3" style="font-size: 20px">Nos cuentas tu evento</h3><p class="p" style="font-size: 15px">Tipo, personas y fecha. Toma un par de minutos.</p></li>
+<li style="display: flex; flex-direction: column; gap: 12px"><span style="width: 40px; height: 40px; border-radius: 999px; border: 1.5px solid #222222; background: #f4f4f4; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box">2</span><h3 class="h3" style="font-size: 20px">Te respondemos en menos de 1 hora hábil</h3><p class="p" style="font-size: 15px">Por WhatsApp o email, para afinar detalles y dietas.</p></li>
+<li style="display: flex; flex-direction: column; gap: 12px"><span style="width: 40px; height: 40px; border-radius: 999px; border: 1.5px solid #222222; background: #f4f4f4; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box">3</span><h3 class="h3" style="font-size: 20px">Recibes la propuesta en menos de 24 horas</h3><p class="p" style="font-size: 15px">Con menú, precios y condiciones claras.</p></li>
+<li style="display: flex; flex-direction: column; gap: 12px"><span style="width: 40px; height: 40px; border-radius: 999px; border: 1.5px solid #222222; background: #f4f4f4; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box">4</span><h3 class="h3" style="font-size: 20px">Reservas con el 50% y nos encargamos</h3><p class="p" style="font-size: 15px">Pagas online o por transferencia. Llegamos y montamos todo.</p></li>
+</ol>
+</div>
+</div>
+</section>
+
+<section class="wrap" style="padding-top: 72px; padding-bottom: 72px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 4 1 320px; display: flex; flex-direction: column; gap: 14px">
+<h2 class="h2">Lo que dicen quienes ya nos contrataron</h2>
+<span style="font-size: 16px"><strong>[NOTA]</strong> de 5 en Google, [N] reseñas</span>
+<a class="go" href="https://www.google.com/maps/place//@-33.4727879,-70.6293979,11z/data=!3m1!4b1!4m3!3m2!1s0x840c83c186bb05cf:0xcc97e20d2ea50b1d!12e1">Ver todas las reseñas en Google<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3"/></svg></a>
+</div>
+<div style="flex: 8 1 560px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<figure style="margin: 0; padding: 24px; border: 1px solid #cccccc; border-radius: 16px; display: flex; flex-direction: column; gap: 12px"><blockquote style="margin: 0; font-size: 18px; line-height: 1.45">“[Texto real de una reseña de Google]”</blockquote><figcaption style="font-size: 14px"><strong>[Nombre]</strong>, [Empresa si aparece]</figcaption></figure>
+<figure style="margin: 48px 0 0; padding: 24px; border: 1px solid #cccccc; border-radius: 16px; background: #f4f4f4; display: flex; flex-direction: column; gap: 12px"><blockquote style="margin: 0; font-size: 18px; line-height: 1.45">“[Texto real de otra reseña]”</blockquote><figcaption style="font-size: 14px"><strong>[Nombre]</strong>, [Empresa si aparece]</figcaption></figure>
+<figure style="margin: 0; padding: 24px; border: 1px solid #cccccc; border-radius: 16px; display: flex; flex-direction: column; gap: 12px"><blockquote style="margin: 0; font-size: 18px; line-height: 1.45">“[Texto real de una tercera reseña]”</blockquote><figcaption style="font-size: 14px"><strong>[Nombre]</strong>, [Empresa si aparece]</figcaption></figure>
+</div>
+</section>
+
+<section id="preguntas" style="background: #f4f4f4">
+<div class="wrap" style="padding-top: 72px; padding-bottom: 72px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+<div style="flex: 5 1 360px; display: flex; flex-direction: column; gap: 16px">
+<div class="ph" style="height: 420px; border-radius: 16px">FOTO REAL: Carolina en un montaje</div>
+<h3 class="h3">Detrás de cada evento está Carolina</h3>
+<p class="p">Soy Carolina Hurtado, directora de Bistró. Desde 2022 hemos hecho más de 500 eventos para más de 30 empresas, y sigo revisando cada propuesta antes de que salga.</p>
+<span class="note">copy borrador: confirmar con Carolina</span>
+</div>
+<div style="flex: 7 1 480px; min-width: 0; display: flex; flex-direction: column">
+<h2 class="h2" style="margin-bottom: 20px">Preguntas frecuentes</h2>
+<div style="border-top: 1px solid #bbbbbb">
+<div style="border-bottom: 1px solid #bbbbbb; padding: 18px 0; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 17px; font-weight: 600; display: flex; justify-content: space-between">¿Cuál es el mínimo de personas?<span aria-hidden="true">−</span></span><p class="p" style="font-size: 16px">Trabajamos desde 20 personas. Para grupos más chicos lo evaluamos caso a caso.</p></div>
+<div class="fq">¿A qué zonas llegan?<span aria-hidden="true">+</span></div>
+<div class="fq">¿Con cuánta anticipación tengo que pedir?<span aria-hidden="true">+</span></div>
+<div class="fq">¿Tienen opciones vegetarianas, veganas o sin gluten?<span aria-hidden="true">+</span></div>
+<div class="fq">¿Cómo se paga?<span aria-hidden="true">+</span></div>
+<div class="fq">¿Emiten factura a empresas?<span aria-hidden="true">+</span></div>
+<div class="fq">¿Y si tengo que cancelar?<span aria-hidden="true">+</span></div>
+</div>
+<p class="p" style="margin-top: 18px">¿Otra pregunta? <a href="#whatsapp" style="font-weight: 600">Escríbenos por WhatsApp</a></p>
+<span class="note">acordeón igual que en mobile</span>
+</div>
+</div>
+</section>
+
+<section style="background: #3a3a3a; color: #ffffff">
+<div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
+<div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 12px">
+<h2 class="h2" style="color: #ffffff">¿Tienes un evento en mente?</h2>
+<p class="p" style="color: #eeeeee">Cuéntanos en un par de minutos y te respondemos en menos de 1 hora hábil.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center">
+<a class="btn" href="#cotizar" style="background: #ffffff; color: #222222">Cotiza tu evento</a>
+<a href="#whatsapp" style="color: #ffffff; font-size: 15px">O escríbenos por WhatsApp</a>
+</div>
+</div>
+</section>
+
+<footer style="background: #222222; color: #ffffff">
+<div class="wrap" style="padding-top: 56px; padding-bottom: 40px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between">
+<div style="flex: 2 1 280px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 32px; font-weight: 800; letter-spacing: -0.02em">Bistró</span>
+<span style="font-size: 15px; color: #cccccc">Catering corporativo en Santiago</span>
+<p style="margin: 12px 0 0; font-size: 14px; line-height: 1.5; color: #cccccc; max-width: 360px">Llegamos a Gran Santiago, Chicureo, Colina y Valle Grande. Otras zonas, a consultar.</p>
+</div>
+<nav aria-label="Secciones" style="flex: 1 1 160px; display: flex; flex-direction: column">
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 600; color: #cccccc">Secciones</p>
+<a class="fl" href="#servicios">Servicios</a><a class="fl" href="#como">Cómo funciona</a><a class="fl" href="#preguntas">Preguntas</a><a class="fl" href="#cotizar">Cotizar</a>
+</nav>
+<div style="flex: 1 1 200px; display: flex; flex-direction: column">
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 600; color: #cccccc">Contacto</p>
+<a class="fl" href="#whatsapp">+56 9 7779 7388</a><a class="fl" href="#instagram">@bistro.caterings</a><span class="fl" style="color: #cccccc">[email por definir]</span>
+</div>
+</div>
+<div class="wrap" style="padding-bottom: 28px"><p style="margin: 0; padding-top: 16px; border-top: 1px solid #555555; font-size: 13px; color: #aaaaaa">© 2026 Bistró Express SpA</p></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

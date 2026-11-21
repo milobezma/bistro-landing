@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Preguntas frecuentes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#222}a:hover{color:#000}
+.note{font-size:11px;color:#555;font-style:italic;line-height:1.3}
+</style>
+</helmet>
+<div style="width: 375px; height: 980px; box-sizing: border-box; background: #f4f4f4; color: #222222; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; display: flex; flex-direction: column; padding: 44px 20px; gap: 18px; overflow: hidden">
+<span class="note" style="font-style: normal">fondo hueso</span>
+<h2 style="margin: 0; font-size: 30px; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">Preguntas frecuentes</h2>
+
+<div style="display: flex; flex-direction: column; border-top: 1px solid #bbbbbb">
+<sc-for list="{{ items }}" as="it" hint-placeholder-count="7">
+<div style="border-bottom: 1px solid #bbbbbb">
+<button type="button" onClick="{{ it.toggle }}" aria-expanded="{{ it.expanded }}" style="width: 100%; min-height: 56px; padding: 12px 0; background: transparent; border: 0; display: flex; justify-content: space-between; align-items: center; gap: 12px; text-align: left; font-family: inherit; font-size: 16px; font-weight: 600; color: #222222">
+<span>{{ it.q }}</span>
+<span aria-hidden="true" style="flex: 0 0 28px; height: 28px; border: 1px solid #222222; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 16px; line-height: 1">{{ it.sign }}</span>
+</button>
+<sc-if value="{{ it.open }}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 0 36px 16px 0; font-size: 15px; line-height: 1.5; color: #333333">{{ it.a }}</p>
+</sc-if>
+</div>
+</sc-for>
+</div>
+
+<p style="margin: 4px 0 0; font-size: 15px">¿Otra pregunta? <a href="#whatsapp" style="font-weight: 600">Escríbenos por WhatsApp</a></p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":375,"height":980}}'>
+class Component extends DCLogic {
+renderVals() {
+const st = this.state || {};
+const abierta = st.abierta === undefined ? 0 : st.abierta;
+const data = [
+{ q: '¿Cuál es el mínimo de personas?', a: 'Trabajamos desde 20 personas. Para grupos más chicos lo evaluamos caso a caso.' },
+{ q: '¿A qué zonas llegan?', a: 'Gran Santiago, Chicureo, Colina y Valle Grande. Otras zonas, a consultar.' },
+{ q: '¿Con cuánta anticipación tengo que pedir?', a: 'Para coffee breaks, 7 días. Para eventos de más de 100 personas, 3 semanas.' },
+{ q: '¿Tienen opciones vegetarianas, veganas o sin gluten?', a: 'Sí. Cuéntanos en la solicitud cuántas personas las necesitan y las incluimos en la propuesta.' },
+{ q: '¿Cómo se paga?', a: 'Reservas la fecha con el 50% y el saldo se paga según lo acordado en la propuesta.' },
+{ q: '¿Emiten factura a empresas?', a: 'Sí, facturamos a nombre de tu empresa.' },
+{ q: '¿Y si tengo que cancelar?', a: 'Te devolvemos el anticipo completo hasta 7 días antes, el 50% entre 7 y 3 días antes, y sin reembolso con menos de 72 horas.' }
+];
+const items = data.map((d, i) => ({
+q: d.q,
+a: d.a,
+open: abierta === i,
+expanded: abierta === i ? 'true' : 'false',
+sign: abierta === i ? '−' : '+',
+toggle: () => this.setState({ abierta: abierta === i ? -1 : i })
+}));
+return { items: items };
+}
+}
+</script>
+</body>
+</html>

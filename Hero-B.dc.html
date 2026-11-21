@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Hero mobile Bistró, versión B</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#222}a:hover{color:#000}
+.ph{background:#e4e4e4;border:1px dashed #8f8f8f;display:flex;align-items:center;justify-content:center;text-align:center;color:#444;font-size:12px;line-height:1.35;box-sizing:border-box;padding:8px}
+.note{font-size:11px;color:#555;font-style:italic;line-height:1.3}
+.lbl{font-size:13px;font-weight:600;color:#222}
+.inp{height:44px;border:1px solid #8f8f8f;border-radius:8px;padding:0 10px;font-size:15px;font-family:inherit;box-sizing:border-box;width:100%;background:#fff;color:#222}
+</style>
+</helmet>
+<div style="width: 375px; height: 812px; box-sizing: border-box; background: #ffffff; color: #222222; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 56px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 16px 0 20px; border-bottom: 1px solid #dddddd">
+<span style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em">Bistró</span>
+<div style="display: flex; gap: 8px">
+<a href="#whatsapp" aria-label="Escribir por WhatsApp" style="width: 44px; height: 44px; border: 1px solid #999999; border-radius: 999px; display: flex; align-items: center; justify-content: center">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M4 16l1-3.2A6.5 6.5 0 1 1 7.5 15.3z"/></svg>
+</a>
+<button aria-label="Abrir menú" style="width: 44px; height: 44px; border: 1px solid #999999; border-radius: 8px; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+</button>
+</div>
+</header>
+
+<div style="padding: 18px 20px 0; display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-size: 31px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em">Coffee breaks, almuerzos y cócteles para tu empresa.</h1>
+<p style="margin: 0; font-size: 15px; line-height: 1.45; color: #333333">Te respondemos en menos de 1 hora hábil y te enviamos la propuesta con precios en menos de 24.</p>
+<div style="display: flex; flex-wrap: wrap; column-gap: 14px; row-gap: 4px; font-size: 13px; color: #333333">
+<span style="display: flex; align-items: center; gap: 5px"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>Desde 20 personas</span>
+<span style="display: flex; align-items: center; gap: 5px"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>Gran Santiago y Chicureo</span>
+<span style="display: flex; align-items: center; gap: 5px"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>Factura a empresas</span>
+</div>
+</div>
+
+<form style="margin: 14px 16px 0; padding: 14px; border: 1.5px solid #222222; border-radius: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span class="lbl" style="font-size: 15px">¿Qué estás organizando?</span>
+<span class="note" style="font-style: normal">Paso 1 de 2</span>
+</div>
+<div style="height: 4px; background: #e4e4e4; border-radius: 999px"><div style="width: 50%; height: 4px; background: #222222; border-radius: 999px"></div></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{ tipos }}" as="t" hint-placeholder-count="6">
+<button type="button" onClick="{{ t.pick }}" aria-pressed="{{ t.pressed }}" style="{{ t.style }}">{{ t.label }}</button>
+</sc-for>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<label class="lbl" for="hb-personas">Personas</label>
+<input class="inp" id="hb-personas" type="number" min="1" inputmode="numeric" placeholder="Ej: 40" onChange="{{ onPersonas }}">
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<label class="lbl" for="hb-fecha">Fecha</label>
+<input class="inp" id="hb-fecha" type="date" onChange="{{ onFecha }}">
+</div>
+</div>
+<label style="display: flex; align-items: center; gap: 8px; font-size: 13px; min-height: 28px"><input type="checkbox" style="width: 18px; height: 18px; margin: 0">Aún no sé la fecha</label>
+<div aria-live="polite" style="{{ avisoStyle }}">{{ aviso }}</div>
+<a href="Form-paso-2.dc.html" style="min-height: 48px; border-radius: 999px; background: #222222; color: #ffffff; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Continuar</a>
+</form>
+
+<div style="padding: 10px 20px 0; text-align: center; font-size: 13px">¿Prefieres conversarlo? <a href="#whatsapp">Escríbenos por WhatsApp</a></div>
+
+<div style="margin-top: 12px; padding: 0 20px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #333333"><strong>+500 eventos</strong> para <strong>+30 empresas</strong> desde 2022</span>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
+<div class="ph" style="height: 32px; border-radius: 6px; font-size: 10px">logo UC</div>
+<div class="ph" style="height: 32px; border-radius: 6px; font-size: 10px">logo BancoEstado</div>
+<div class="ph" style="height: 32px; border-radius: 6px; font-size: 10px">logo Entel</div>
+<div class="ph" style="height: 32px; border-radius: 6px; font-size: 10px">logo Santander</div>
+</div>
+</div>
+
+<div style="margin-top: 12px; padding: 0 16px; flex: 1 1 auto; min-height: 0">
+<div class="ph" style="height: 100%; border-radius: 16px 16px 0 0; border-bottom: 0">FOTO REAL GRANDE: montaje en oficina (sigue bajo el pliegue)</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":375,"height":812}}'>
+class Component extends DCLogic {
+renderVals() {
+const st = this.state || {};
+const picked = st.picked;
+const opts = [
+{ id: 'cb', label: 'Coffee break' },
+{ id: 'al', label: 'Almuerzo' },
+{ id: 'co', label: 'Cóctel' },
+{ id: 'de', label: 'Desayuno' },
+{ id: 'br', label: 'Brunch' },
+{ id: 'ot', label: 'Otro' }
+];
+const personas = parseInt(st.personas, 10);
+let dias = null;
+if (st.fecha) {
+const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+dias = Math.round((new Date(st.fecha + 'T00:00:00') - hoy) / 86400000);
+}
+let aviso = 'La propuesta se arma según tu número de personas, tu fecha y tu presupuesto.';
+let tono = 'info';
+if (!isNaN(personas) && personas > 0 && personas < 20) {
+aviso = 'Para menos de 20 personas lo evaluamos caso a caso. Igual envía tu solicitud o escríbenos por WhatsApp.';
+tono = 'alerta';
+} else if (dias !== null && dias >= 0 && dias < 7) {
+aviso = 'Tu evento es en menos de 7 días: te confirmamos disponibilidad apenas recibamos tu solicitud.';
+tono = 'alerta';
+} else if (!isNaN(personas) && personas > 100 && dias !== null && dias < 21) {
+aviso = 'Para más de 100 personas pedimos 3 semanas de anticipación. Escríbenos y vemos si alcanzamos.';
+tono = 'alerta';
+} else if (picked && !isNaN(personas) && personas >= 20) {
+aviso = 'Perfecto, con esto ya podemos armar tu propuesta.';
+tono = 'ok';
+}
+const avisoStyle = 'font-size: 13px; line-height: 1.4; padding: 8px 10px; border-radius: 8px; ' + (tono === 'alerta' ? 'background: #eeeeee; border: 1px solid #222222; color: #222222' : tono === 'ok' ? 'background: #f4f4f4; border: 1px solid #8f8f8f; color: #222222; font-weight: 600' : 'background: transparent; border: 1px dashed #8f8f8f; color: #444444');
+const base = 'min-height: 44px; border-radius: 8px; font-size: 13px; font-family: inherit; padding: 0 4px; ';
+const tipos = opts.map((o) => ({
+label: o.label,
+pressed: picked === o.id ? 'true' : 'false',
+style: base + (picked === o.id ? 'background: #222222; color: #ffffff; border: 1.5px solid #222222; font-weight: 600' : 'background: #ffffff; color: #222222; border: 1px solid #8f8f8f'),
+pick: () => this.setState({ picked: o.id })
+}));
+return {
+tipos: tipos,
+aviso: aviso,
+avisoStyle: avisoStyle,
+onPersonas: (e) => this.setState({ personas: e.target.value }),
+onFecha: (e) => this.setState({ fecha: e.target.value })
+};
+}
+}
+</script>
+</body>
+</html>

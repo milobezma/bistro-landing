@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Propuesta Bistró</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#222}a:hover{color:#000}
+.ph{background:#e4e4e4;border:1px dashed #8f8f8f;display:flex;align-items:center;justify-content:center;text-align:center;color:#444;font-size:11px;line-height:1.3;box-sizing:border-box;padding:6px}
+.note{font-size:11px;color:#555;font-style:italic;line-height:1.3}
+.k{font-size:12px;color:#555}
+.v{font-size:15px;font-weight:600}
+.h2{margin:0;font-size:24px;line-height:1.15;font-weight:800;letter-spacing:-0.02em}
+.li{font-size:14px;line-height:1.4;display:flex;gap:8px;align-items:flex-start}
+.line{height:10px;background:#d6d6d6;border-radius:4px}
+</style>
+</helmet>
+<div style="width: 375px; height: 2560px; box-sizing: border-box; background: #ffffff; color: #222222; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 56px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-bottom: 1px solid #dddddd">
+<span style="font-size: 20px; font-weight: 800; letter-spacing: -0.02em">Bistró</span>
+<span class="k">Propuesta N° [0123]</span>
+</header>
+
+<section style="padding: 24px 20px 0; display: flex; flex-direction: column; gap: 14px">
+<span class="k">Para Daniela, de [Empresa]</span>
+<h1 style="margin: 0; font-size: 28px; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em">Tu propuesta para el coffee break del 12 de diciembre</h1>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 14px; background: #f4f4f4; border-radius: 12px">
+<div><div class="k">Servicio</div><div class="v">Coffee break AM</div></div>
+<div><div class="k">Personas</div><div class="v">40</div></div>
+<div><div class="k">Fecha y hora</div><div class="v">Jue 12 dic, 10:00</div></div>
+<div><div class="k">Lugar</div><div class="v">[Dirección]</div></div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; padding: 8px 12px; border: 1px solid #222222; border-radius: 8px">
+<span>Propuesta válida hasta el <strong>[fecha]</strong></span>
+<span class="note">por defecto: 2 semanas antes del evento</span>
+</div>
+<div style="display: flex; gap: 12px; align-items: center">
+<div class="ph" style="flex: 0 0 52px; height: 52px; border-radius: 999px; font-size: 9px">FOTO CAROLINA</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.45">“Armé estas opciones con lo que nos contaste. Si quieres cambiar algo, escríbeme.” <span style="font-weight: 600">Carolina</span></p>
+</div>
+</section>
+
+<section style="padding: 32px 20px 0; display: flex; flex-direction: column; gap: 12px">
+<h2 class="h2">Elige una opción</h2>
+<sc-for list="{{ opciones }}" as="o" hint-placeholder-count="3">
+<article style="{{ o.cardStyle }}">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 800">{{ o.nombre }}</h3>
+<sc-if value="{{ o.reco }}" hint-placeholder-val="{{ false }}"><span style="font-size: 11px; font-weight: 600; padding: 4px 8px; border-radius: 999px; background: #222222; color: #ffffff">Recomendada por Carolina</span></sc-if>
+</div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px">
+<li class="li"><span aria-hidden="true">–</span><span>[Ítem del menú]</span></li>
+<li class="li"><span aria-hidden="true">–</span><span>[Ítem del menú]</span></li>
+<li class="li"><span aria-hidden="true">–</span><span>[Ítem del menú]</span></li>
+<li class="li"><span aria-hidden="true">–</span><span>{{ o.extra }}</span></li>
+</ul>
+<div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid #dddddd; padding-top: 10px">
+<span style="font-size: 14px">$[precio] por persona + IVA</span>
+<span class="k">Total: $[total] + IVA</span>
+</div>
+<button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.pressed }}" style="{{ o.btnStyle }}">{{ o.btnLabel }}</button>
+</article>
+</sc-for>
+</section>
+
+<section style="padding: 28px 20px 0; display: flex; flex-direction: column; gap: 10px">
+<h2 class="h2" style="font-size: 20px">Extras opcionales</h2>
+<span class="note">solo aparece si la propuesta trae extras</span>
+<label style="display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 48px; padding: 0 12px; border: 1px solid #cccccc; border-radius: 8px; font-size: 14px"><span style="display: flex; align-items: center; gap: 10px"><input type="checkbox" style="width: 20px; height: 20px; margin: 0">Garzones</span><span class="k">$[precio] por garzón</span></label>
+<label style="display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 48px; padding: 0 12px; border: 1px solid #cccccc; border-radius: 8px; font-size: 14px"><span style="display: flex; align-items: center; gap: 10px"><input type="checkbox" style="width: 20px; height: 20px; margin: 0">Loza</span><span class="k">$[precio] por persona</span></label>
+</section>
+
+<section style="padding: 28px 20px 0; display: flex; flex-direction: column; gap: 10px">
+<h2 class="h2" style="font-size: 20px">Siempre incluido</h2>
+<div class="li"><svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>Traslado en Gran Santiago</div>
+<div class="li"><svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>Montaje en tu oficina</div>
+<div class="li"><svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>Factura a nombre de tu empresa</div>
+</section>
+
+<section style="margin-top: 28px; padding: 24px 20px; background: #f4f4f4; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 14px"><strong>+500 eventos</strong> para <strong>+30 empresas</strong> desde 2022</span>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
+<div class="ph" style="height: 30px; border-radius: 6px; font-size: 9px">UC</div>
+<div class="ph" style="height: 30px; border-radius: 6px; font-size: 9px">BancoEstado</div>
+<div class="ph" style="height: 30px; border-radius: 6px; font-size: 9px">Entel</div>
+<div class="ph" style="height: 30px; border-radius: 6px; font-size: 9px">Santander</div>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.45">“[Una reseña real de Google]” <span class="k">[Nombre], en Google</span></p>
+</section>
+
+<section style="padding: 28px 20px 0; display: flex; flex-direction: column; gap: 10px">
+<h2 class="h2" style="font-size: 20px">Condiciones</h2>
+<div class="li"><span aria-hidden="true">–</span><span>Reservas la fecha con el <strong>50%</strong>, online con Webpay o por transferencia.</span></div>
+<div class="li"><span aria-hidden="true">–</span><span>El saldo se paga antes del evento, el <strong>[fecha acordada]</strong>.</span></div>
+<div class="li"><span aria-hidden="true">–</span><span>Cancelación: devolución total hasta 7 días antes, 50% entre 7 y 3 días, sin devolución con menos de 72 horas.</span></div>
+<div class="li"><span aria-hidden="true">–</span><span>Precios en pesos chilenos, más IVA.</span></div>
+</section>
+
+<section style="padding: 28px 20px 0; display: flex; flex-direction: column; gap: 10px">
+<a href="Reservar.dc.html" style="min-height: 52px; border-radius: 999px; background: #222222; color: #ffffff; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Reservar esta fecha</a>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<a href="#cambio" style="min-height: 48px; border-radius: 999px; border: 1.5px solid #222222; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Pedir un cambio</a>
+<a href="#whatsapp" style="min-height: 48px; border-radius: 999px; border: 1.5px solid #222222; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Hablar con Carolina</a>
+</div>
+</section>
+
+<section style="padding: 28px 20px; display: flex; gap: 12px; align-items: center">
+<div class="ph" style="flex: 0 0 64px; height: 64px; border-radius: 999px; font-size: 9px">FOTO CAROLINA</div>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600">Carolina Hurtado Vielmas</span>
+<span class="k">Directora, Bistró Express SpA</span>
+<span class="k">+56 9 7779 7388</span>
+</div>
+</section>
+
+<div style="margin-top: auto; position: sticky; bottom: 0; padding: 10px 16px 16px; background: #ffffff; border-top: 1px solid #cccccc; display: flex; gap: 10px; align-items: center">
+<div style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 2px; min-width: 0">
+<span class="k">{{ barraTitulo }}</span>
+<span style="font-size: 15px; font-weight: 700">{{ barraTotal }}</span>
+</div>
+<a href="Reservar.dc.html" style="flex: 0 0 auto; min-height: 48px; padding: 0 20px; border-radius: 999px; background: #222222; color: #ffffff; font-size: 15px; font-weight: 600; display: flex; align-items: center; text-decoration: none">Reservar</a>
+</div>
+<span class="note" style="text-align: center; padding: 0 0 8px; background: #ffffff">barra fija: siempre visible al hacer scroll</span>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":375,"height":2560}}'>
+class Component extends DCLogic {
+renderVals() {
+const st = this.state || {};
+const elegida = st.elegida === undefined ? 1 : st.elegida;
+const data = [
+{ nombre: '[Opción 1]', extra: '[Lo esencial]', reco: false },
+{ nombre: '[Opción 2]', extra: '[Lo que suma esta opción]', reco: true },
+{ nombre: '[Opción 3]', extra: '[Lo que suma esta opción]', reco: false }
+];
+const opciones = data.map((d, i) => {
+const on = elegida === i;
+return {
+nombre: d.nombre,
+extra: d.extra,
+reco: d.reco,
+pressed: on ? 'true' : 'false',
+btnLabel: on ? 'Opción elegida' : 'Elegir esta opción',
+cardStyle: 'margin: 0; padding: 16px; border-radius: 16px; display: flex; flex-direction: column; gap: 10px; ' + (on ? 'border: 2px solid #222222; background: #ffffff' : 'border: 1px solid #cccccc; background: #ffffff'),
+btnStyle: 'min-height: 48px; border-radius: 999px; font-size: 15px; font-weight: 600; font-family: inherit; ' + (on ? 'background: #222222; color: #ffffff; border: 0' : 'background: #ffffff; color: #222222; border: 1.5px solid #222222'),
+pick: () => this.setState({ elegida: i })
+};
+});
+return {
+opciones: opciones,
+barraTitulo: data[elegida].nombre + ', 40 personas',
+barraTotal: '$[total] + IVA'
+};
+}
+}
+</script>
+</body>
+</html>
