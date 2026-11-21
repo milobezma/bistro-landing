@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Cotizar, paso 2 de 2</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#222}a:hover{color:#000}
+.note{font-size:11px;color:#555;font-style:italic;line-height:1.3}
+.lbl{font-size:13px;font-weight:600;color:#222}
+.help{font-size:12px;color:#555;line-height:1.35}
+.inp{height:44px;border:1px solid #8f8f8f;border-radius:8px;padding:0 10px;font-size:15px;font-family:inherit;box-sizing:border-box;width:100%;background:#fff;color:#222}
+</style>
+</helmet>
+<div style="width: 375px; height: 812px; box-sizing: border-box; background: #ffffff; color: #222222; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 56px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 16px 0 8px; border-bottom: 1px solid #dddddd">
+<a href="Hero-B.dc.html" style="min-height: 44px; display: flex; align-items: center; gap: 6px; padding: 0 12px; font-size: 14px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>Volver
+</a>
+<span style="font-size: 20px; font-weight: 800; letter-spacing: -0.02em">Bistró</span>
+<span style="width: 72px"></span>
+</header>
+
+<form style="padding: 12px 20px 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span class="note" style="font-style: normal">Paso 2 de 2</span>
+<span class="note" style="font-style: normal">Último paso</span>
+</div>
+<div style="height: 4px; background: #222222; border-radius: 999px"></div>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 12px; background: #f1f1f1; border-radius: 8px; font-size: 13px">
+<span><strong>Coffee break</strong>, 40 personas, 12 de diciembre</span>
+<a href="Hero-B.dc.html" style="font-size: 13px; min-height: 32px; display: flex; align-items: center">Editar</a>
+</div>
+
+<h1 style="margin: 2px 0 0; font-size: 24px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em">¿A quién le enviamos la propuesta?</h1>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<label class="lbl" for="p2-nombre">Nombre</label>
+<input class="inp" id="p2-nombre" type="text" autocomplete="given-name" placeholder="Ej: Daniela">
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<label class="lbl" for="p2-empresa">Empresa</label>
+<input class="inp" id="p2-empresa" type="text" autocomplete="organization" placeholder="Nombre de tu empresa">
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<label class="lbl" for="p2-wsp">WhatsApp</label>
+<div style="display: flex; gap: 6px">
+<span style="height: 44px; display: flex; align-items: center; padding: 0 10px; border: 1px solid #8f8f8f; border-radius: 8px; font-size: 15px; background: #f1f1f1">+56 9</span>
+<input class="inp" id="p2-wsp" type="tel" autocomplete="tel-national" inputmode="numeric" placeholder="1234 5678" style="flex: 1 1 auto">
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<label class="lbl" for="p2-email">Email de trabajo</label>
+<input class="inp" id="p2-email" type="email" autocomplete="email" placeholder="nombre@empresa.cl">
+<span class="help">Ahí te llega la propuesta en PDF.</span>
+</div>
+
+<fieldset style="margin: 0; padding: 10px 12px; border: 1px dashed #8f8f8f; border-radius: 8px; display: flex; flex-direction: column; gap: 6px">
+<legend style="padding: 0 4px; font-size: 13px; font-weight: 600">Presupuesto aproximado <span style="font-weight: 400; color: #555">(opcional)</span></legend>
+<div role="group" aria-label="Tipo de presupuesto" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 3px; background: #f1f1f1; border-radius: 999px">
+<sc-for list="{{ modos }}" as="m" hint-placeholder-count="2">
+<button type="button" onClick="{{ m.pick }}" aria-pressed="{{ m.pressed }}" style="{{ m.style }}">{{ m.label }}</button>
+</sc-for>
+</div>
+<div style="display: flex; align-items: center; gap: 6px">
+<span style="font-size: 15px">$</span>
+<label for="p2-presu" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Monto</label>
+<input class="inp" id="p2-presu" type="text" inputmode="numeric" placeholder="{{ ejemplo }}">
+</div>
+<span class="help">Nos ayuda a armar una propuesta que calce con lo que tienes.</span>
+</fieldset>
+
+<a href="#comentario" style="font-size: 13px; min-height: 28px; display: flex; align-items: center; gap: 6px">
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="1.6" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg>Agregar un comentario (dietas, lugar, horario)
+</a>
+
+<a href="Confirmacion.dc.html" style="min-height: 48px; border-radius: 999px; background: #222222; color: #ffffff; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Enviar solicitud</a>
+
+<span class="help" style="text-align: center">Te respondemos en menos de 1 hora hábil. Usamos tus datos solo para esta cotización.</span>
+</form>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":375,"height":812}}'>
+class Component extends DCLogic {
+renderVals() {
+const modo = (this.state && this.state.modo) || 'pp';
+const base = 'min-height: 36px; border-radius: 999px; border: 0; font-size: 13px; font-family: inherit; ';
+const modos = [
+{ id: 'pp', label: 'Por persona' },
+{ id: 'tot', label: 'Total del evento' }
+].map((m) => ({
+label: m.label,
+pressed: modo === m.id ? 'true' : 'false',
+style: base + (modo === m.id ? 'background: #222222; color: #ffffff; font-weight: 600' : 'background: transparent; color: #222222'),
+pick: () => this.setState({ modo: m.id })
+}));
+return { modos: modos, ejemplo: modo === 'pp' ? 'Monto por persona' : 'Monto total' };
+}
+}
+</script>
+</body>
+</html>

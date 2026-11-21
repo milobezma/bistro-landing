@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Cómo funciona</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#222}a:hover{color:#000}
+.note{font-size:11px;color:#555;font-style:italic;line-height:1.3}
+.num{flex:0 0 36px;height:36px;border-radius:999px;border:1.5px solid #222;background:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;box-sizing:border-box;position:relative;z-index:1}
+.st{margin:0;font-size:18px;font-weight:800;letter-spacing:-0.01em}
+.sd{margin:4px 0 0;font-size:14px;line-height:1.45;color:#333}
+</style>
+</helmet>
+<div style="width: 375px; height: 760px; box-sizing: border-box; background: #f4f4f4; color: #222222; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; display: flex; flex-direction: column; padding: 40px 20px; gap: 24px; overflow: hidden">
+<span class="note" style="font-style: normal">fondo hueso</span>
+<h2 style="margin: 0; font-size: 30px; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">De tu solicitud a tu evento, en 4 pasos</h2>
+
+<div style="position: relative">
+<div aria-hidden="true" style="position: absolute; left: 17px; top: 18px; bottom: 18px; width: 2px; background: #bbbbbb"></div>
+<ol style="margin: 0; padding: 0; list-style: none; position: relative; display: flex; flex-direction: column; gap: 22px">
+<li style="display: flex; gap: 14px">
+<span class="num" style="background: #222222; color: #ffffff">1</span>
+<div><h3 class="st">Nos cuentas tu evento</h3><p class="sd">Tipo, personas y fecha. Toma un par de minutos.</p></div>
+</li>
+<li style="display: flex; gap: 14px">
+<span class="num">2</span>
+<div><h3 class="st">Te respondemos en menos de 1 hora hábil</h3><p class="sd">Por WhatsApp o email, para afinar detalles y dietas.</p></div>
+</li>
+<li style="display: flex; gap: 14px">
+<span class="num">3</span>
+<div><h3 class="st">Recibes la propuesta en menos de 24 horas</h3><p class="sd">Con menú, precios y condiciones claras.</p></div>
+</li>
+<li style="display: flex; gap: 14px">
+<span class="num">4</span>
+<div><h3 class="st">Reservas con el 50% y nos encargamos</h3><p class="sd">Pagas online o por transferencia. Llegamos y montamos todo; el saldo se paga antes del evento, con factura a tu empresa.</p></div>
+</li>
+</ol>
+</div>
+
+<a href="Hero-B.dc.html" style="min-height: 48px; border-radius: 999px; background: #222222; color: #ffffff; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Cotiza tu evento</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":375,"height":760}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>
