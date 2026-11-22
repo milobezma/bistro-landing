@@ -6,6 +6,13 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  // URLs del sitio estático anterior (anuncios, buscadores, links guardados).
+  async redirects() {
+    return [
+      { source: "/index.html", destination: "/", permanent: true },
+      { source: "/gracias.html", destination: "/gracias", permanent: true },
+    ];
+  },
   turbopack: {
     rules: {
       "*.css": {
