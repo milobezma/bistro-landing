@@ -15,7 +15,8 @@ export class AirtableNoConfigurado extends Error {
 }
 
 function config() {
-  const token = process.env.AIRTABLE_TOKEN;
+  // En Vercel quedó cargado como AIRTABLE_KEY; se aceptan los dos nombres.
+  const token = process.env.AIRTABLE_TOKEN ?? process.env.AIRTABLE_KEY;
   const base = process.env.AIRTABLE_BASE_ID;
   if (!token || !base) throw new AirtableNoConfigurado();
   return { token, base };
