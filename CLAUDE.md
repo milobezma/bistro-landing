@@ -123,13 +123,13 @@ Orden de arriba hacia abajo:
    - **Aviso en vivo** bajo el paso 1 (sin precios). Reglas:
      - Menos de 20 personas → "Para menos de 20 personas lo evaluamos caso a caso. Igual envía tu solicitud o escríbenos por WhatsApp."
      - Fecha a menos de 7 días → "Tu evento es en menos de 7 días: te confirmamos disponibilidad apenas recibamos tu solicitud."
-     - Más de 100 personas y menos de 21 días → "Para más de 100 personas pedimos 3 semanas de anticipación. Escríbenos y vemos si alcanzamos."
+     - Más de 100 personas y menos de 14 días → "Para más de 100 personas recomendamos al menos 2 semanas de anticipación, así todo sale con la calidad que nos representa. Escríbenos y vemos si alcanzamos."
      - Tipo elegido y 20 o más personas → "Perfecto, con esto ya podemos armar tu propuesta."
      - Sin datos → "La propuesta se arma según tu número de personas, tu fecha y tu presupuesto."
    - Link secundario a WhatsApp.
    - "+500 eventos para +30 empresas desde 2022" + logos (UC, BancoEstado, Entel, Santander), antes del pliegue.
    - En escritorio: texto, requisitos y foto a la izquierda; formulario a la derecha, siempre sobre el pliegue.
-2. **Servicios** (`Servicios`): abre con la foto real del coffee break. Sin precios. Cada servicio dice para qué tipo de reunión sirve y tiene su "Cotizar", que sube al formulario del hero con ese tipo ya elegido. Composición editorial (foto grande, foto ancha, dos fotos de alto distinto, fila chica). Almuerzos con tags Vegetariano / Vegano / Sin gluten y "a la mesa o box lunch". Banda negra "¿Más de 100 personas?" con el video y la regla de 3 semanas. Cierre: "¿No sabes qué elegir?" → WhatsApp.
+2. **Servicios** (`Servicios`): abre con la foto real del coffee break. Sin precios. Cada servicio dice para qué tipo de reunión sirve y tiene su "Cotizar", que sube al formulario del hero con ese tipo ya elegido. Composición editorial (foto grande, foto ancha, dos fotos de alto distinto, fila chica). Almuerzos con tags Vegetariano / Vegano / Sin gluten y "a la mesa o box lunch". Banda negra "¿Más de 100 personas?" con el video y la recomendación de 2 semanas. Cierre: "¿No sabes qué elegir?" → WhatsApp.
 3. **Cómo funciona** (`Como-funciona`): 4 pasos reales en línea de tiempo + CTA.
 4. **Reseñas** (`Resenas`): 3 reseñas reales de Google apiladas con distinto ancho (no carrusel), nota y cantidad solo si son reales, link a Google.
 5. **Preguntas frecuentes** (`Preguntas`): acordeón con 7 preguntas (respuestas en "Contenido base"). También como `FAQPage` en schema.org. En escritorio va al lado de la sección de Carolina.
@@ -191,7 +191,7 @@ Se genera desde Airtable: Carolina llena un registro (cliente, evento, opciones,
 - **Reseñas de Google:** https://www.google.com/maps/place//@-33.4727879,-70.6293979,11z/data=!3m1!4b1!4m3!3m2!1s0x840c83c186bb05cf:0xcc97e20d2ea50b1d!12e1
 - **Mínimo:** 20 personas (grupos más chicos se evalúan caso a caso).
 - **Cobertura:** Gran Santiago, Chicureo, Colina y Valle Grande. Otras zonas, a consultar.
-- **Anticipación:** 7 días para coffee breaks y 3 semanas para eventos de más de 100 personas.
+- **Anticipación:** 7 días para coffee breaks y al menos 2 semanas (recomendado) para eventos de más de 100 personas.
 - **Pago:** 50% para reservar la fecha (Webpay o transferencia a BCI, Bistró Express SpA); saldo antes del evento, en la fecha acordada. Factura a empresas.
 - **Cancelación:** reembolso total del anticipo hasta 7 días antes, 50% entre 7 y 3 días antes, sin reembolso con menos de 72 horas.
 - **Montaje:** siempre incluido. Extras (garzones, loza) solo si el evento los requiere.
@@ -201,7 +201,7 @@ Se genera desde Airtable: Carolina llena un registro (cliente, evento, opciones,
 
 1. ¿Cuál es el mínimo de personas? → Trabajamos desde 20 personas. Para grupos más chicos lo evaluamos caso a caso.
 2. ¿A qué zonas llegan? → Gran Santiago, Chicureo, Colina y Valle Grande. Otras zonas, a consultar.
-3. ¿Con cuánta anticipación tengo que pedir? → Para coffee breaks, 7 días. Para eventos de más de 100 personas, 3 semanas.
+3. ¿Con cuánta anticipación tengo que pedir? → Para coffee breaks, 7 días. Para eventos de más de 100 personas, recomendamos al menos 2 semanas, para que todo salga con la calidad de siempre.
 4. ¿Tienen opciones vegetarianas, veganas o sin gluten? → Sí. Cuéntanos en la solicitud cuántas personas las necesitan y las incluimos en la propuesta.
 5. ¿Cómo se paga? → Reservas la fecha con el 50% y el saldo se paga antes del evento, en la fecha acordada.
 6. ¿Emiten factura a empresas? → Sí, facturamos a nombre de tu empresa.
