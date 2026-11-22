@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+/* Tokens de marca (CLAUDE.md § Marca). Nada de hex fuera de este bloque. */
+:root {
+  --negro: #161512;
+  --carbon: #2a2824;
+  --crema: #f5efe3;
+  --hueso: #fbf8f2;
+  --gris: #5c574e;
+  --amarillo: #f2b90f;
+  --amarillo-hover: #d9a406;
+  --linea: #ded5c4;
+
+  /* --font-display y --font-body se definen en @theme (abajo) a partir de next/font */
+
+  --radio-s: 8px;
+  --radio-m: 16px;
+  --radio-pill: 999px;
+
+  /* Grano de papel: ruido SVG muy suave sobre crema */
+  --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0 0.07 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@theme inline {
+  /* Solo la paleta de Bistró: se apagan los colores por defecto de Tailwind */
+  --color-*: initial;
+  --color-negro: var(--negro);
+  --color-carbon: var(--carbon);
+  --color-crema: var(--crema);
+  --color-hueso: var(--hueso);
+  --color-gris: var(--gris);
+  --color-amarillo: var(--amarillo);
+  --color-amarillo-hover: var(--amarillo-hover);
+  --color-linea: var(--linea);
+
+  --font-*: initial;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-instrument), system-ui, sans-serif;
+
+  --radius-s: var(--radio-s);
+  --radius-m: var(--radio-m);
+  --radius-pill: var(--radio-pill);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--crema);
+  background-image: var(--grano);
+  color: var(--negro);
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Titulares: Fraunces suave, sin "wonk" */
+.font-display,
+h1,
+h2,
+h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-variation-settings: "SOFT" 100, "WONK" 0;
+}
+
+h1,
+h2 {
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  font-weight: 750;
+}
+
+h3 {
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+/* La itálica de Fraunces viene de su propia carga (sin precarga) */
+.font-display em,
+h1 em,
+h2 em,
+h3 em {
+  font-family: var(--font-fraunces-italica), var(--font-fraunces), Georgia, serif;
+}
+
+/* Foco visible y consistente */
+:focus-visible {
+  outline: 2.5px solid var(--amarillo);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.sobre-claro :focus-visible,
+.sobre-claro:focus-visible {
+  outline-color: var(--negro);
+}
+
+/* Fondos de sección */
+.fondo-crema {
+  background-color: var(--crema);
+  background-image: var(--grano);
+}
+.fondo-hueso {
+  background-color: var(--hueso);
+  background-image: var(--grano);
+}
+
+/* Entrada del hero: el único momento fuerte. El formulario NO se anima. */
+@keyframes revelar {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.revelar {
+  animation: revelar 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--retraso, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Acordeón nativo: sin el triángulo del navegador */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}

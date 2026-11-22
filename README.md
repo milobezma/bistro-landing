@@ -1,24 +1,37 @@
-# Wireframes Bistró
+# bistrochile.com
 
-Lienzo interactivo (para ver y clickear): https://claude.ai/artifact/BVgQpaMK1P5fNDU3geRPat
+Web de Bistró, catering corporativo en Santiago. Next.js 16 (App Router) + TypeScript + Tailwind 4, deploy en Vercel.
 
-Estos archivos son la fuente de los wireframes. Son HTML de baja fidelidad en grises: definen estructura, contenido, textos borrador y comportamiento (la lógica del aviso del hero, el acordeón, la elección de opción en la propuesta, el selector de pago). No definen el estilo: eso sale de `CLAUDE.md`.
+- Contenido, marca y reglas: [`CLAUDE.md`](CLAUDE.md)
+- Diseño y plan por fases: [`docs/superpowers/specs/2026-11-21-bistro-web-design.md`](docs/superpowers/specs/2026-11-21-bistro-web-design.md)
+- Wireframes: [`docs/wireframes/`](docs/wireframes/)
+- Sitio anterior (HTML estático, ya no se publica): [`legacy/`](legacy/)
 
-No se abren solos en el navegador (dependen del runtime del lienzo). Léelos como especificación.
+## Correr en local
 
-| Archivo | Pantalla |
+```bash
+npm install
+cp .env.example .env.local   # y completar AIRTABLE_TOKEN
+npm run dev                  # http://localhost:3000
+```
+
+```bash
+npm test          # reglas del aviso en vivo y validación del formulario
+npm run lint
+npm run build
+```
+
+## Dónde se cambia cada cosa
+
+| Qué | Archivo |
 | --- | --- |
-| `Hero-B.dc.html` | Hero mobile con el paso 1 del formulario y el aviso en vivo |
-| `Form-paso-2.dc.html` | Paso 2 del formulario (contacto + presupuesto opcional) |
-| `Confirmacion.dc.html` | Confirmación después de enviar |
-| `Servicios.dc.html` | Servicios + banda de eventos grandes |
-| `Como-funciona.dc.html` | Los 4 pasos |
-| `Resenas.dc.html` | Reseñas de Google |
-| `Preguntas.dc.html` | Preguntas frecuentes (acordeón) |
-| `Cierre.dc.html` | Carolina, CTA final y footer |
-| `Barra-fija.dc.html` | Barra fija mobile |
-| `Propuesta.dc.html` | Página de propuesta `/propuesta/[id]` |
-| `Reservar.dc.html` | Reservar: factura + pago Webpay o transferencia |
-| `Landing-desktop.dc.html` | Landing completa en escritorio (1440) |
+| Textos, cifras, servicios, preguntas, reseñas | `src/content/sitio.ts` |
+| Reglas del aviso en vivo del formulario | `src/lib/precalificacion.ts` |
+| Colores, tipografía, grano, animación del hero | `src/app/globals.css` |
+| Fotos | `public/images/` |
 
-Convenciones: gris oscuro de las bandas = negro; fondo gris claro = hueso; botones negros = amarillo con texto negro en la web final. Lo que está entre corchetes es un dato pendiente.
+Las reseñas de Google se muestran solo cuando se cargan en `src/content/sitio.ts` (`resenas`).
+
+## Formulario → Airtable
+
+El formulario guarda cada solicitud en la base **Bistró CRM**, tabla **Solicitudes** (con tipo, personas, fecha, presupuesto, precalificación, origen y UTM). El token de Airtable vive solo en el servidor (`AIRTABLE_TOKEN`). Si falta, el formulario muestra un error amable con el link a WhatsApp y el error queda en los logs.
