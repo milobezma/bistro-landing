@@ -10,7 +10,7 @@ export type EtiquetaPrecalificacion =
   | "OK"
   | "Menos de 20 personas"
   | "Menos de 7 días"
-  | "+100 personas con menos de 3 semanas"
+  | "+100 personas con menos de 2 semanas"
   | "Fecha por definir";
 
 export type EntradaPrecalificacion = {
@@ -35,7 +35,7 @@ export const MENSAJES = {
   menosDe20:
     "Para menos de 20 personas lo evaluamos caso a caso. Igual envía tu solicitud o escríbenos por WhatsApp.",
   menosDe7Dias: "Tu evento es en menos de 7 días: te confirmamos disponibilidad apenas recibamos tu solicitud.",
-  masDe100: "Para más de 100 personas pedimos 3 semanas de anticipación. Escríbenos y vemos si alcanzamos.",
+  masDe100: "Para más de 100 personas recomendamos al menos 2 semanas de anticipación, así todo sale con la calidad que nos representa. Escríbenos y vemos si alcanzamos.",
   ok: "Perfecto, con esto ya podemos armar tu propuesta.",
 } as const;
 
@@ -65,8 +65,8 @@ export function precalificar({ tipo, personas, fecha, sinFecha, hoy }: EntradaPr
   if (dias !== null && dias >= 0 && dias < 7) {
     return { tono: "alerta", mensaje: MENSAJES.menosDe7Dias, etiqueta: "Menos de 7 días" };
   }
-  if (hayPersonas && personas > 100 && dias !== null && dias < 21) {
-    return { tono: "alerta", mensaje: MENSAJES.masDe100, etiqueta: "+100 personas con menos de 3 semanas" };
+  if (hayPersonas && personas > 100 && dias !== null && dias < 14) {
+    return { tono: "alerta", mensaje: MENSAJES.masDe100, etiqueta: "+100 personas con menos de 2 semanas" };
   }
   if (tipo && hayPersonas && personas >= 20) {
     return { tono: "ok", mensaje: MENSAJES.ok, etiqueta: sinFecha || !fecha ? "Fecha por definir" : "OK" };

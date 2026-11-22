@@ -164,7 +164,7 @@ export const preguntas = [
   },
   {
     q: "¿Con cuánta anticipación tengo que pedir?",
-    a: "Para coffee breaks, 7 días. Para eventos de más de 100 personas, 3 semanas.",
+    a: "Para coffee breaks, 7 días. Para eventos de más de 100 personas, recomendamos al menos 2 semanas, para que todo salga con la calidad de siempre.",
   },
   {
     q: "¿Tienen opciones vegetarianas, veganas o sin gluten?",

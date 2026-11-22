@@ -64,7 +64,7 @@ Orden y contenido exactamente según `CLAUDE.md` § Landing y los wireframes:
 
 ### Reglas del aviso en vivo (`src/lib/precalificacion.ts`, con tests)
 
-En este orden: < 20 personas → aviso de caso a caso; fecha a < 7 días → aviso de disponibilidad; > 100 personas y < 21 días → aviso de 3 semanas; tipo elegido y ≥ 20 → "Perfecto…"; si no → mensaje neutro. El resultado también se guarda en Airtable (`Precalificación`) para que Carolina priorice.
+En este orden: < 20 personas → aviso de caso a caso; fecha a < 7 días → aviso de disponibilidad; > 100 personas y < 14 días → recomendación de al menos 2 semanas; tipo elegido y ≥ 20 → "Perfecto…"; si no → mensaje neutro. El resultado también se guarda en Airtable (`Precalificación`) para que Carolina priorice.
 
 ## Datos
 

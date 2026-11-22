@@ -137,7 +137,7 @@ function MasDeCien() {
         <div className="lg:col-span-6">
           <h2 className="text-[clamp(2.1rem,3.4vw+1rem,3rem)] text-crema">¿Más de 100 personas?</h2>
           <p className="mt-4 max-w-[38ch] text-crema/85">
-            También hacemos eventos grandes. Para estos pedimos <strong className="font-semibold text-crema">3 semanas de anticipación</strong>.
+            También hacemos eventos grandes. Para estos recomendamos <strong className="font-semibold text-crema">al menos 2 semanas de anticipación</strong>, para que todo salga con la calidad que nos representa.
           </p>
           <CotizarLink ubicacion="mas-de-100" className={`${botonPrimario} mt-8`}>
             Cotizar un evento grande <Flecha />

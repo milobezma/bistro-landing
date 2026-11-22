@@ -33,18 +33,18 @@ test("a 7 días exactos ya no avisa", () => {
   assert.equal(r.etiqueta, "OK");
 });
 
-test("más de 100 personas con menos de 21 días pide 3 semanas", () => {
-  const r = precalificar({ ...base, tipo: "Cóctel", personas: 150, fecha: "2026-12-05" });
+test("más de 100 personas con menos de 14 días recomienda 2 semanas", () => {
+  const r = precalificar({ ...base, tipo: "Cóctel", personas: 150, fecha: "2026-12-04" });
   assert.equal(r.mensaje, MENSAJES.masDe100);
-  assert.equal(r.etiqueta, "+100 personas con menos de 3 semanas");
+  assert.equal(r.etiqueta, "+100 personas con menos de 2 semanas");
 });
 
-test("más de 100 personas con 21 días o más está OK", () => {
-  const r = precalificar({ ...base, tipo: "Cóctel", personas: 150, fecha: "2026-12-12" });
+test("más de 100 personas con 14 días o más está OK", () => {
+  const r = precalificar({ ...base, tipo: "Cóctel", personas: 150, fecha: "2026-12-05" });
   assert.equal(r.etiqueta, "OK");
 });
 
-test("100 personas exactas no gatilla la regla de 3 semanas", () => {
+test("100 personas exactas no gatilla la regla de 2 semanas", () => {
   const r = precalificar({ ...base, tipo: "Cóctel", personas: 100, fecha: "2026-12-05" });
   assert.equal(r.etiqueta, "OK");
 });
